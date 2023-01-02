@@ -1,0 +1,17 @@
+diff --git a/drivers/gpu/drm/i915/display/intel_bios.c b/drivers/gpu/drm/i915/display/intel_bios.c
+index edbdb949b6ce..656e3be926ed 100644
+--- a/drivers/gpu/drm/i915/display/intel_bios.c
++++ b/drivers/gpu/drm/i915/display/intel_bios.c
+@@ -2697,9 +2697,9 @@ static void parse_ddi_port(struct intel_bios_encoder_data *devdata)
+ 
+ 	if (i915->display.vbt.ports[port]) {
+ 		drm_dbg_kms(&i915->drm,
+-			    "More than one child device for port %c in VBT, using the first.\n",
++			    "More than one child device for port %c in VBT, using the last.\n",
+ 			    port_name(port));
+-		return;
++		// return;
+ 	}
+ 
+ 	sanitize_device_type(devdata, port);
+

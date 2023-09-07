@@ -1,4 +1,4 @@
-# Nixos-configuration
+# NixOS-configuration
 
 The configuration is currently not completed. I'm just too lazy to write a lot of code.
 

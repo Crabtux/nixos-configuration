@@ -2,7 +2,7 @@
 
 The configuration is currently not completed. I'm just too lazy to write a lot of code.
 
-~~Make the repository public is just a way of reminding myself to update the configuration more frequently XD~~
+~~Making the repository public is just a way of reminding myself to update the configuration more frequently XD~~
 
 ## Some information
 

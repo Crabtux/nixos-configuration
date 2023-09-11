@@ -1,8 +1,12 @@
 { config, pkgs, lib, ... }:
 
 {
+  imports = [ 
+    ./xserver/config.nix
+  ];
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
+  
   home.username = "crabtux";
   home.homeDirectory = "/home/crabtux";
 
@@ -20,7 +24,15 @@
     neofetch
     clash
     thunderbird
+    nitrogen
   ];
+
+  systemd.user.targets.tray = {
+    Unit = {
+      Description = "Home Manager System Tray";
+      Requires = [ "graphical-session-pre.target" ];
+    };
+  };
 
   programs.firefox.enable = true;
 
@@ -53,53 +65,5 @@
       "http.proxy=127.0.0.1:7890"
       "https.proxy=127.0.0.1:7890"
     ];
-  };
-
-  xsession.windowManager.i3 = {
-    enable = true;
-    config = {
-      bars = [];
-      gaps.inner = 9;
-      modifier = "Mod4";
-      keybindings = 
-        let
-          modifier = config.xsession.windowManager.i3.config.modifier;
-        in lib.mkOptionDefault {
-          "Ctrl+${modifier}+l" = "exec i3lock-fancy";
-          "${modifier}+Shift+e" = "exec xfce4-session-logout";
-          "${modifier}+d" = "exec --no-startup-id /home/crabtux/.config/polybar/docky/scripts/launcher.sh";
-        };
-      startup = [
-        { command = "nitrogen --restore"; always = false; }
-        { command = "picom --config ~crabtux/.config/picom/picom.conf"; always = false; }
-        { command = "MONITOR=\"eDP-1\" /home/crabtux/.config/polybar/launch.sh --docky"; always = false; }
-        { command = "firefox"; always = false; }
-        { command = "qq"; always = false; }
-        { command = "telegram-desktop"; always = false; }
-        { command = "thunderbird"; always = false; }
-        { command = "clash"; always = false; }
-      ];
-      assigns = {
-        "number 1: terminal" = [{ class = "non-existent"; }];
-        "number 2: Code" = [{ class = "Code"; }];
-        "number 7: QQ" = [{ class = "QQ"; }];
-        "number 8: TelegramDesktop" = [{ class = "TelegramDesktop"; }];
-        "number 9: thunderbird" = [{ class = "thunderbird"; }];
-        "number 10: firefox" = [{ class = "firefox"; }];
-      };
-      colors.focused = {
-        background = "#ffb6c1";
-        border = "#ffb6c1";
-        childBorder = "#ffb6c1";
-        indicator = "#2e9ef4";
-        text = "#ffffff";
-      };
-      defaultWorkspace = "workspace number 1";
-      floating.criteria = [
-        {
-          title = "图片查看器";
-        }
-      ];
-    };
   };
 }

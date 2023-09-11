@@ -81,6 +81,11 @@
   # emmm...
   services.gnome.gnome-keyring.enable = true;
 
-  # Enable docker
+  # Enable docker but it has some quote on detection of new computer
   # virtualisation.docker.enable = true;
+
+  services.resolved = {
+    enable = true;
+    dnssec = "false";
+  };
 }

@@ -12,7 +12,7 @@
     displayManager = {
       lightdm = {
         enable = true;
-        background = /home/crabtux/Downloads/test.jpg;
+        background = ./lightdm-background.jpg;
         extraConfig = ''
           xserver-command=X -dpi 144
         '';

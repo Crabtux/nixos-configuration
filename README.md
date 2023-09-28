@@ -18,7 +18,9 @@ The configuration is currently not completed. I'm just too lazy to write a lot o
 - Program Editor: Neovim
 - Browser: Firefox
 
-Development environments are defined in `shell.nix` in the development directory (not included in this repository).
+The Polybar and Rofi themes are modified from ![adi1090x/polybar-themes](https://github.com/adi1090x/polybar-themes)
+
+Development environments are defined in `shell.nix` in the development directory (currently not included in this repository, maybe one day I will upload them).
 
 ## TODO
 

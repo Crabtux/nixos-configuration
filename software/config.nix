@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }:
 
 let
-  wemeetapp = pkgs.callPackage /etc/nixos/software/wemeetapp/default.nix {};
+  wemeetapp = pkgs.callPackage ./wemeetapp/default.nix {};
 in {
   imports = [
     ./v2ray/v2ray.nix

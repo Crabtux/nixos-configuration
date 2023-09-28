@@ -7,10 +7,10 @@
     experimental-features = [ "nix-command" "flakes" ];
   };
 
-  systemd.services.nix-daemon.environment = {
-    http_proxy = "127.0.0.1:7890";
-    https_proxy = "127.0.0.1:7890";
-  };
+  # systemd.services.nix-daemon.environment = {
+  #   http_proxy = "127.0.0.1:7890";
+  #   https_proxy = "127.0.0.1:7890";
+  # };
 
   nixpkgs.config.allowUnfree = true;
 }

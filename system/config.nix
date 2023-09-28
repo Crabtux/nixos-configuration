@@ -24,8 +24,8 @@
 
   # Set the default i3-sensible-terminal
   environment.sessionVariables.TERMINAL = [ "terminator" ];
-  environment.sessionVariables.http_proxy = [ "127.0.0.1:7890" ];
-  environment.sessionVariables.https_proxy = [ "127.0.0.1:7890" ];
+  # environment.sessionVariables.http_proxy = [ "127.0.0.1:7890" ];
+  # environment.sessionVariables.https_proxy = [ "127.0.0.1:7890" ];
 
   services.printing.enable = true;
 

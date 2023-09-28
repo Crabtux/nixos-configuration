@@ -12,7 +12,7 @@
   networking.networkmanager.enable = true;
 
   # Set the sops
-  sops.age.keyFile = "/root/.config/sops/age/keys.txt";
+  # sops.age.keyFile = "/root/.config/sops/age/keys.txt";
 
   # sops.defaultSopsFile = ./secrets/secrets.json;
 

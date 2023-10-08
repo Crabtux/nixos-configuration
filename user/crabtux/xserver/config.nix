@@ -36,10 +36,11 @@ in {
       fi
     '';
   };
-    
+
   systemd.user.services.polybar = {
-    # I don't exactly know how it works.
-    Install.WantedBy = [ "tray.target" "graphical-session.target" ];
+    Unit.After = [ "graphical-session.target" ];
+    Unit.Wants = [ "graphical-session.target" ];
+    Install.WantedBy = [ "graphical-session.target" ];
   };
 
   # Set up i3lock-fancy with xautolock as screensaver

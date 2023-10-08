@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, nixpkgs-unstable, lib, ... }:
 
 let
   wemeetapp = pkgs.callPackage ./wemeetapp/default.nix {};
@@ -62,6 +62,14 @@ in {
 
     # 哈哈
     vscode.fhs
+  ] ++ [ 
+    (nixpkgs-unstable.legacyPackages.${pkgs.system}.cutter.withPlugins (
+      cutter: with cutter; [
+        jsdec
+        rz-ghidra
+        sigdb
+      ]
+    ))
   ];
 
    programs.adb.enable = true;

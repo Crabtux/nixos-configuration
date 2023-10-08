@@ -26,12 +26,15 @@
     thunderbird
     nitrogen
     remmina
+    anki
   ];
 
   systemd.user.targets.tray = {
+    Install.WantedBy = [ "graphical-session.target" ];
     Unit = {
       Description = "Home Manager System Tray";
-      Requires = [ "graphical-session-pre.target" ];
+      After = [ "graphical-session.target" ];
+      Wants = [ "graphical-session.target" ];
     };
   };
 

@@ -27,6 +27,7 @@
     nitrogen
     remmina
     anki
+    wireshark
   ];
 
   systemd.user.targets.tray = {
@@ -43,7 +44,7 @@
   programs.fish = {
     enable = true;
     shellAliases = {
-      nixos-update = "sudo nixos-rebuild switch -v --impure";
+      nixos-update = "sudo nixos-rebuild switch -v";
       nixos-edit = "cd /etc/nixos; sudo vim /etc/nixos/configuration.nix; cd -;";
     };
     plugins = [

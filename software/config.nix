@@ -42,6 +42,8 @@ in {
     zip
     tldr
     rsync
+    julia-bin
+    odoo
     gimp
 
     # Network Utilities

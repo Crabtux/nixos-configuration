@@ -43,7 +43,6 @@ in {
     tldr
     rsync
     julia-bin
-    odoo
     gimp
 
     # Network Utilities
@@ -62,16 +61,7 @@ in {
     # ScreenSaver
     i3lock-fancy
 
-    # 哈哈
-    vscode.fhs
-  ] ++ [ 
-    (nixpkgs-unstable.legacyPackages.${pkgs.system}.cutter.withPlugins (
-      cutter: with cutter; [
-        jsdec
-        rz-ghidra
-        sigdb
-      ]
-    ))
+    cutter
   ];
 
    programs.adb.enable = true;

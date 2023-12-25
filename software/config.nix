@@ -20,7 +20,6 @@ in {
     feh
     git
     polybar
-    v2ray
     htop
     iftop
     tailscale
@@ -60,8 +59,6 @@ in {
 
     # ScreenSaver
     i3lock-fancy
-
-    cutter
   ];
 
    programs.adb.enable = true;

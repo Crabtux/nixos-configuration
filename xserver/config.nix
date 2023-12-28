@@ -28,7 +28,7 @@
       defaultSession = "xfce+i3";
     };
 
-    # Set up xfce as desktopManager
+    # Set xfce as desktop manager (but without window manager)
     desktopManager = {
       xterm.enable = false;
       xfce = {

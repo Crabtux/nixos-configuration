@@ -104,7 +104,7 @@ in {
           { command = "qq"; always = false; }
           { command = "telegram-desktop"; always = false; }
           { command = "thunderbird"; always = false; }
-          { command = "clash"; always = false; }
+          { command = "clash-meta"; always = false; }
         ];
       assigns = {
         "number 1: terminal" = [{ class = "non-existent"; }];

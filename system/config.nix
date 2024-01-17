@@ -42,9 +42,9 @@
 
   # Configure the fonts
   fonts = {
-    enableDefaultFonts = true;
+    enableDefaultPackages = true;
 
-    fonts = with pkgs; [
+    packages = with pkgs; [
       source-han-sans-simplified-chinese
       (nerdfonts.override { fonts = [ "Hack" ]; })
     ];

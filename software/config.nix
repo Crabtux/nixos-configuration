@@ -53,6 +53,7 @@ in {
     wget
     iperf3
     wpa_supplicant_gui
+    rpi-imager
 
     # Wallpaper Manager
     nitrogen

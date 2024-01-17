@@ -7,7 +7,7 @@
     ../software/config.nix
     ../xserver/config.nix
     ../system/config.nix
-    ../user/crabtux/config.nix
+    ../home-manager/config.nix
   ];
 
   networking.networkmanager.enable = true;

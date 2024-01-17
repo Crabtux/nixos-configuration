@@ -2,19 +2,15 @@
 
 {
   imports = [ 
-    ./software/config.nix
-    ./xserver/config.nix
-    ./system/config.nix
-    ./hardware/laptop/config.nix
-    ./user/crabtux/config.nix
+    ./config.nix
+
+    ../software/config.nix
+    ../xserver/config.nix
+    ../system/config.nix
+    ../user/crabtux/config.nix
   ];
 
   networking.networkmanager.enable = true;
-
-  # Set the sops
-  # sops.age.keyFile = "/root/.config/sops/age/keys.txt";
-
-  # sops.defaultSopsFile = ./secrets/secrets.json;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

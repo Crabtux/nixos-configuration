@@ -29,7 +29,7 @@
           in [
             defaults
             sops-nix.nixosModules.sops
-            ./configuration.nix
+            ./nixos/configuration.nix
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;

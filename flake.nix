@@ -16,8 +16,9 @@
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
       unstable-pkgs = nixpkgs-unstable.legacyPackages.${system};
-
     in {
+      packages = import ./pkgs pkgs;
+
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = attrs;

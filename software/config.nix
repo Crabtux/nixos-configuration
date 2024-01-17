@@ -1,8 +1,6 @@
-{ config, pkgs, nixpkgs-unstable, lib, ... }:
+{ config, self, pkgs, nixpkgs-unstable, lib, ... }:
 
-let
-  wemeetapp = pkgs.callPackage ./wemeetapp/default.nix {};
-in {
+{
   imports = [
     ./v2ray/v2ray.nix
     ./neovim/neovim.nix
@@ -36,7 +34,6 @@ in {
     rofi
     bottles
     obs-studio
-    wemeetapp
     xclip
     zip
     tldr
@@ -60,6 +57,8 @@ in {
 
     # ScreenSaver
     i3lock-fancy
+  ] ++ [
+    self.packages.wemeetapp
   ];
 
    programs.adb.enable = true;

@@ -1,10 +1,6 @@
 { config, pkgs, lib, ... }:
 
 {
-  imports = [
-    ./wireguard.nix
-  ];
-
   # Set your time zone.
   time.timeZone = "Asia/Shanghai";
 

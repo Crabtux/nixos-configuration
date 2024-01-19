@@ -2,15 +2,10 @@
 
 {
   imports = [ 
+    ../pc-common/configuration.nix
+
     ./config.nix
-
-    ../software/config.nix
-    ../xserver/config.nix
-    ../system/config.nix
-    ../home-manager/config.nix
   ];
-
-  networking.networkmanager.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

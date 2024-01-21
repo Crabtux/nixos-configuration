@@ -3,10 +3,10 @@
 {
   imports = [ 
     ../../modules/nixos/xserver
+    ../../modules/nixos/user.nix
+
     ./s-config.nix
     ./software/config.nix
-
-    ../../home-manager/config.nix
   ];
 
   nixpkgs = {

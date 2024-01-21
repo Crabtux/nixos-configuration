@@ -61,5 +61,7 @@
     pkgs.unstable.cutter
   ];
 
-   programs.adb.enable = true;
+  programs.adb.enable = true;
+  programs.fish.enable = true;
+  programs.steam.enable = true;
 }

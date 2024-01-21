@@ -17,7 +17,7 @@
       pkgs = nixpkgs.legacyPackages.${system};
     in {
       packages = import ./pkgs pkgs;
-      overlays = import ./overlays { inherit inputs; };
+      overlays = import ./overlays { inherit inputs pkgs; };
 
       nixosConfigurations = {
         wujie = nixpkgs.lib.nixosSystem {

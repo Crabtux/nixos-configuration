@@ -8,7 +8,6 @@
     ./zsh/zsh.nix
     ./nix/nix.nix
     ./polybar/polybar.nix
-    ./i3lock-fancy/i3lock.nix
   ];
 
   environment.systemPackages = with pkgs; [

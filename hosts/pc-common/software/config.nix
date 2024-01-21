@@ -1,4 +1,4 @@
-{ config, self, pkgs, nixpkgs-unstable, lib, ... }:
+{ config, self, pkgs, lib, ... }:
 
 {
   imports = [
@@ -59,6 +59,7 @@
     i3lock-fancy
   ] ++ [
     self.packages.wemeetapp
+    pkgs.unstable.cutter
   ];
 
    programs.adb.enable = true;

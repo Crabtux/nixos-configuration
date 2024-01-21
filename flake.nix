@@ -18,18 +18,14 @@
       unstable-pkgs = nixpkgs-unstable.legacyPackages.${system};
     in {
       packages = import ./pkgs pkgs;
+      overlays = import ./overlays {inherit attrs;};
 
       nixosConfigurations = {
         wujie = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           specialArgs = attrs;
           modules = 
-            let
-              defaults = { pkgs, ... }: {
-                _module.args.nixpkgs-unstable = import nixpkgs-unstable { inherit (pkgs.stdenv.targetPlatform) system; };
-              };
-            in [
-              defaults
+            [
               sops-nix.nixosModules.sops
               ./hosts/wujie/configuration.nix
               home-manager.nixosModules.home-manager

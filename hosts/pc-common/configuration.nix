@@ -1,4 +1,4 @@
-{ config, pkgs, lib, sops, ... }:
+{ config, self, pkgs, lib, sops, ... }:
 
 {
   imports = [ 
@@ -8,6 +8,15 @@
 
     ../../home-manager/config.nix
   ];
+
+  nixpkgs = {
+    overlays = [
+      self.outputs.overlays.unstable-packages
+    ];
+    config = {
+      allowUnfree = true;
+    };
+  };
 
   networking.networkmanager.enable = true;
 }

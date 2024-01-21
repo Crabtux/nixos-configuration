@@ -1,8 +1,8 @@
-{ inputs, pkgs, outputs, ... }:
+{ inputs, outputs, pkgs, ... }:
 
 {
   imports = [ 
-    ./x-config.nix
+    ../../modules/nixos/xserver
     ./s-config.nix
     ./software/config.nix
 

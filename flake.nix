@@ -2,7 +2,6 @@
   description = "Just a very basic flake for my daliy use";
 
   inputs = {
-    sops-nix.url = "github:Mic92/sops-nix";
     nixpkgs.url = "github:nixos/nixpkgs/23.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager = {
@@ -11,22 +10,21 @@
     };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, sops-nix, home-manager, ... }@attrs: 
+  outputs = { self, nixpkgs, home-manager, ... }@inputs: 
     let
+      inherit (self) outputs;
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
-      unstable-pkgs = nixpkgs-unstable.legacyPackages.${system};
     in {
       packages = import ./pkgs pkgs;
-      overlays = import ./overlays {inherit attrs;};
+      overlays = import ./overlays { inherit inputs; };
 
       nixosConfigurations = {
         wujie = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
-          specialArgs = attrs;
+          specialArgs = { inherit inputs outputs; };
           modules = 
             [
-              sops-nix.nixosModules.sops
               ./hosts/wujie/configuration.nix
               home-manager.nixosModules.home-manager
               {

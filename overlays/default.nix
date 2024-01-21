@@ -1,5 +1,5 @@
 # This file defines overlays
-{ attrs, ... }: 
+{ inputs, ... }: 
 
 {
   # This one brings our custom packages from the 'pkgs' directory
@@ -17,7 +17,7 @@
   # When applied, the unstable nixpkgs set (declared in the flake inputs) will
   # be accessible through 'pkgs.unstable'
   unstable-packages = final: _prev: {
-    unstable = import attrs.nixpkgs-unstable {
+    unstable = import inputs.nixpkgs-unstable {
       system = final.system;
       config.allowUnfree = true;
     };

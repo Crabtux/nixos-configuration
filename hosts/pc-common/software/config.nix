@@ -1,4 +1,4 @@
-{ lib, pkgs, self, ... }:
+{ lib, outputs, pkgs, ... }:
 
 {
   imports = [
@@ -58,7 +58,7 @@
     # ScreenSaver
     i3lock-fancy
   ] ++ [
-    self.packages.wemeetapp
+    outputs.packages.wemeetapp
     pkgs.unstable.cutter
   ];
 

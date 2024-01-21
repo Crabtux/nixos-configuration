@@ -1,4 +1,4 @@
-{ pkgs, self, ... }:
+{ pkgs, outputs, ... }:
 
 {
   imports = [ 
@@ -11,7 +11,7 @@
 
   nixpkgs = {
     overlays = [
-      self.outputs.overlays.unstable-packages
+      outputs.overlays.unstable-packages
     ];
     config = {
       allowUnfree = true;

@@ -13,22 +13,12 @@
 
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
-    ./xserver/config.nix
+    ../modules/home-manager/xsession
   ];
 
-  # TODO: Set your username
   home = {
     username = "crabtux";
     homeDirectory = "/home/crabtux";
-  };
-
-  systemd.user.targets.tray = {
-    Install.WantedBy = [ "graphical-session.target" ];
-    Unit = {
-      Description = "Home Manager System Tray";
-      After = [ "graphical-session.target" ];
-      Wants = [ "graphical-session.target" ];
-    };
   };
 
   # Add stuff for your user as you see fit:

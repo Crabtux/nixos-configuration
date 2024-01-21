@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ pkgs, ... }:
 
 {
   nixpkgs.config.packageOverrides = pkgs: { 

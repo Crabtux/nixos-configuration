@@ -4,10 +4,9 @@
   imports = [ 
     ../pc-common/configuration.nix
 
-    ./config.nix
+    ./hardware-configuration.nix
+    ./wujie-config.nix
   ];
-  
-  networking.hostName = "wujie";
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

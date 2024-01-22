@@ -2,11 +2,16 @@
 
 {
   imports = [ 
-    ../../modules/nixos/software
-    ../../modules/nixos/user.nix
     ../../modules/nixos/xserver
 
-    ./s-config.nix
+    ../../modules/nixos/software
+
+    ../../modules/nixos/system/sound
+    ../../modules/nixos/system/bluetooth.nix
+    ../../modules/nixos/system/fonts.nix
+    ../../modules/nixos/system/i18n.nix
+
+    ../../modules/nixos/user.nix
   ];
 
   nixpkgs = {
@@ -19,5 +24,15 @@
     };
   };
 
-  networking.networkmanager.enable = true;
+  # For printing to PDF
+  services.printing.enable = true;
+
+  # For VSCoe
+  services.gnome.gnome-keyring.enable = true;
+
+  # Set the default i3-sensible-terminal
+  environment.sessionVariables.TERMINAL = [ "terminator" ];
+  environment.variables.JULIA_PKG_SERVER = "https://mirrors.nju.edu.cn/julia/";
+  # environment.sessionVariables.http_proxy = [ "127.0.0.1:7890" ];
+  # environment.sessionVariables.https_proxy = [ "127.0.0.1:7890" ];
 }

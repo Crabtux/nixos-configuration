@@ -1,30 +1,28 @@
 # NixOS-configuration
 
-The configuration is currently not completed. I'm just too lazy to write a lot of code.
+## 部署
 
-~~Making the repository public is just a way of reminding myself to update the configuration more frequently XD~~
+我还没有在其它机器上测试过。
 
-## Some information
+## 一些信息
 
 - Shell: Fish
-- Fonts: Hack (with nerd font) & Source Han Sans
-- Display Manager: Lightdm
-- Window Manager: i3wm
+- Terminal Emulator: Terminator
+- Fonts:
+  - zh: Source Han Sans (zh-CN)
+  - en: Hack
 - Desktop Manager: Xfce
+- Window Manager: i3wm
+- Display Manager: Lightdm
 - Screensaver: i3lock-fancy with xautolock
 - Application Launcher: Rofi
 - Status Bar: Polybar
 - Compositor: Picom
-- Program Editor: Neovim
-- Browser: Firefox
 
-The Polybar and Rofi themes are modified from [adi1090x/polybar-themes](https://github.com/adi1090x/polybar-themes).
-
-Development environments are defined in `shell.nix` in the development directory (currently not included in this repository, maybe one day I will upload them).
+Polybar 和 Rofi 的主题，修改自 [adi1090x/polybar-themes](https://github.com/adi1090x/polybar-themes)。
 
 ## TODO
 
-- Pack a cursor theme from <https://www.xfce-look.org/p/2077667>
-- Add secret management system (maybe sops-nix?)
-- Continue to configure home-manager
-- Purify the configuration so that it can be installed on other computers
+- 给这个 [鼠标指针主题](https://www.xfce-look.org/p/2077667) 打包
+- 在更多机器上使用 Nix 和 NixOS
+- Secret Management（比如用 sops-nix）

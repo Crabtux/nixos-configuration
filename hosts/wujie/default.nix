@@ -3,7 +3,7 @@
 {
   imports = [ 
     # Template
-    ../../profiles/desktop.nix
+    ../../profiles/nixos/desktop.nix
 
     # Local configs
     ./hardware-configuration.nix

@@ -30,7 +30,7 @@
               {
                 home-manager.useGlobalPkgs = true;
                 home-manager.useUserPackages = true;
-                home-manager.users.crabtux = import ./home-manager/home.nix;
+                home-manager.users.crabtux = import ./profiles/home-manager/desktop.nix;
               }
             ];
         };

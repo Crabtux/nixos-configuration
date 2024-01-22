@@ -2,17 +2,17 @@
 
 {
   imports = [ 
-    ../modules/nixos/xserver
+    ../../modules/nixos/xserver
 
-    ../modules/nixos/software
+    ../../modules/nixos/software
 
-    ../modules/nixos/system/sound
-    ../modules/nixos/system/bluetooth.nix
-    ../modules/nixos/system/fonts.nix
-    ../modules/nixos/system/i18n.nix
+    ../../modules/nixos/system/sound
+    ../../modules/nixos/system/bluetooth.nix
+    ../../modules/nixos/system/fonts.nix
+    ../../modules/nixos/system/i18n.nix
 
-    ../modules/nixos/network.nix
-    ../modules/nixos/user.nix
+    ../../modules/nixos/network.nix
+    ../../modules/nixos/user.nix
   ];
 
   nixpkgs = {

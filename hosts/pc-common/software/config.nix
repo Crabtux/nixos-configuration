@@ -2,12 +2,9 @@
 
 {
   imports = [
-    ./v2ray/v2ray.nix
     ./neovim/neovim.nix
     ./tailscale/tailscale.nix
-    ./zsh/zsh.nix
     ./nix/nix.nix
-    ./polybar/polybar.nix
   ];
 
   environment.systemPackages = with pkgs; [

@@ -12,6 +12,11 @@
     # example = prev.example.overrideAttrs (oldAttrs: rec {
     # ...
     # });
+    polybar = prev.polybar.override { 
+      mpdSupport = true; 
+      i3Support = true;
+    };
+
     i3lock-fancy = prev.i3lock-fancy.overrideAttrs (finalAttrs: previousAttrs: {
       postPatch = ''
         sed -i i3lock-fancy \

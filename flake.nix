@@ -25,7 +25,7 @@
           specialArgs = { inherit inputs outputs; };
           modules = 
             [
-              ./hosts/wujie/configuration.nix
+              ./hosts/wujie
               home-manager.nixosModules.home-manager
               {
                 home-manager.useGlobalPkgs = true;

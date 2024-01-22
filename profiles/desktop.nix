@@ -11,6 +11,7 @@
     ../../modules/nixos/system/fonts.nix
     ../../modules/nixos/system/i18n.nix
 
+    ../../modules/nixos/network.nix
     ../../modules/nixos/user.nix
   ];
 

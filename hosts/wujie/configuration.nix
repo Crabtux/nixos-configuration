@@ -2,8 +2,10 @@
 
 {
   imports = [ 
-    ../pc-common/configuration.nix
+    # Template
+    ../../profiles/desktop.nix
 
+    # Local configs
     ./hardware-configuration.nix
     ./wujie-config.nix
   ];

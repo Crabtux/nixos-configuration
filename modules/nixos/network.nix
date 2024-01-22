@@ -1,8 +1,8 @@
-{ ... }:
+{ lib, ... }:
 
 {
   networking.enableIPv6 = true;
-  networking.useDHCP = true;
+  networking.useDHCP = lib.mkDefault true;
   networking.networkmanager.enable = true;
 
   services.resolved = {

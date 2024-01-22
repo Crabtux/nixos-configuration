@@ -3,8 +3,8 @@
 {
   imports = [
     ./neovim/neovim.nix
-    ./tailscale/tailscale.nix
-    ./nix/nix.nix
+    ./tailscale.nix
+    ./nix.nix
   ];
 
   environment.systemPackages = with pkgs; [

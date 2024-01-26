@@ -31,8 +31,6 @@
   # Enable home-manager
   programs.home-manager.enable = true;
 
-  services.caffeine.enable = true;
-
   home.packages = with pkgs; [
     tdesktop
     neofetch

@@ -14,13 +14,9 @@
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
     ../../modules/home-manager/software/direnv.nix
-    ../../modules/home-manager/software/firefox.nix
     ../../modules/home-manager/software/fish.nix
     ../../modules/home-manager/software/git.nix
-    ../../modules/home-manager/software/kitty.nix
-    ../../modules/home-manager/software/vscode.nix
-
-    ../../modules/home-manager/xsession
+    ../../modules/home-manager/software/neovim
   ];
 
   home = {
@@ -29,14 +25,9 @@
   };
 
   home.packages = with pkgs; [
-    tdesktop
+    tmux
     neofetch
     clash-meta
-    thunderbird
-    nitrogen
-    remmina
-    anki
-    wireshark
   ];
 
   # Enable home-manager
@@ -46,5 +37,5 @@
   systemd.user.startServices = "sd-switch";
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  home.stateVersion = "22.11";
+  home.stateVersion = "23.11";
 }

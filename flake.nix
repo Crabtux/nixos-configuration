@@ -35,5 +35,15 @@
             ];
         };
       };
+
+      homeConfigurations = {
+        crabtux = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.${system};
+          extraSpecialArgs = { inherit nixpkgs system; };
+          modules = [
+            ./profiles/home-manager/server.nix
+          ];
+        };
+      };
     };
 }

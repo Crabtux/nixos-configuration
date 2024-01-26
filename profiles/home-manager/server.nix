@@ -19,6 +19,8 @@
     ../../modules/home-manager/software/neovim
   ];
 
+  targets.genericLinux.enable = true;
+
   home = {
     username = "crabtux";
     homeDirectory = "/home/crabtux";
@@ -32,6 +34,12 @@
 
   # Enable home-manager
   programs.home-manager.enable = true;
+  programs.bash = {
+    enable = true;
+    # A very strange way to use fish as default shell
+    # when you use standalone home manager
+    initExtra = "exec fish";
+  };
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";

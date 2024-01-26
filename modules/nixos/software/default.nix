@@ -9,7 +9,7 @@
 
   environment.systemPackages = with pkgs; [
     picom
-    terminator
+    kitty
     neovim
     feh
     git

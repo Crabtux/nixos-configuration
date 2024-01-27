@@ -17,8 +17,8 @@
     ../../modules/home-manager/software/firefox.nix
     ../../modules/home-manager/software/fish.nix
     ../../modules/home-manager/software/git.nix
-    ../../modules/home-manager/software/kitty.nix
     ../../modules/home-manager/software/vscode.nix
+    ../../modules/home-manager/software/wezterm.nix
 
     ../../modules/home-manager/xsession
   ];

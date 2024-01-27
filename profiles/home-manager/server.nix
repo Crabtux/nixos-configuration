@@ -16,6 +16,7 @@
     ../../modules/home-manager/software/direnv.nix
     ../../modules/home-manager/software/fish.nix
     ../../modules/home-manager/software/git.nix
+    ../../modules/home-manager/software/tmux.nix
     ../../modules/home-manager/software/neovim
   ];
 

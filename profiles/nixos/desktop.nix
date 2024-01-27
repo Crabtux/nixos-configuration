@@ -32,7 +32,7 @@
   services.gnome.gnome-keyring.enable = true;
 
   # Set the default i3-sensible-terminal
-  environment.sessionVariables.TERMINAL = [ "kitty" ];
+  environment.sessionVariables.TERMINAL = [ "wezterm" ];
   environment.variables.JULIA_PKG_SERVER = "https://mirrors.nju.edu.cn/julia/";
   # environment.sessionVariables.http_proxy = [ "127.0.0.1:7890" ];
   # environment.sessionVariables.https_proxy = [ "127.0.0.1:7890" ];

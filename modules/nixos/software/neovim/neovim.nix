@@ -37,11 +37,11 @@
 
         autocmd VimEnter * NERDTree
 
-        let g:airline_theme='deus'
+        let g:airline_theme='catppuccin'
         let g:airline_powerline_fonts = 1
         let g:airline#extensions#tabline#enabled = 1
 
-        colorscheme tokyonight-night
+        colorscheme catppuccin-mocha
 
         lua << EOF
           vim.api.nvim_create_user_command('Shell', 'bel sp | resize 15 | te', {})
@@ -50,7 +50,7 @@
 
       packages.plugins = with pkgs.vimPlugins; {
         start = [
-          tokyonight-nvim
+          catppuccin-nvim
           nerdtree
           dashboard-nvim
           vim-nix

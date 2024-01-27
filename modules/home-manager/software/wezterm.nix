@@ -15,8 +15,14 @@
         config = wezterm.config_builder()
       end
 
+      config.color_scheme = 'Catppuccin Macchiato'
+      config.colors = {
+        background = 'black'
+      }
+
       config.enable_scroll_bar = true
       config.use_fancy_tab_bar = false
+      config.tab_max_width = 32
       config.font = wezterm.font("Hack Nerd Font", {weight="Regular", stretch="Normal", style="Normal"})
       config.font_size = 11.0
       config.window_background_opacity = 0.8

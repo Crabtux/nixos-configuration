@@ -9,7 +9,7 @@
     vimAlias = true;
 
     plugins = with pkgs.vimPlugins; [
-      tokyonight-nvim
+      catppuccin-nvim
       nerdtree
       dashboard-nvim
       vim-nix
@@ -57,11 +57,11 @@
 
       autocmd VimEnter * NERDTree
 
-      let g:airline_theme='deus'
+      let g:airline_theme = 'catppuccin'
       let g:airline_powerline_fonts = 1
       let g:airline#extensions#tabline#enabled = 1
 
-      colorscheme tokyonight-night
+      colorscheme catppuccin-mocha
     '';
 
     extraLuaConfig = ''

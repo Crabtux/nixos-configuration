@@ -1,13 +1,17 @@
 # NixOS-configuration
 
-## 部署
+里面貌似有：
 
-我还没有在其它机器上测试过。
+- 一个给 PC 用的 NixOS + Home Manager 配置
+  - Home Manager 作为 NixOS 的模块使用
+- 一个给服务器用的 Standalone Home Manager 配置。
+
+有点乱，但我暂时改不动了（
 
 ## 一些信息
 
 - Shell: Fish
-- Terminal Emulator: Terminator
+- Terminal Emulator: Wezterm
 - Fonts:
   - zh: Source Han Sans (zh-CN)
   - en: Hack

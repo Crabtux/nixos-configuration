@@ -24,6 +24,7 @@
           { command = "telegram-desktop"; always = false; }
           { command = "thunderbird"; always = false; }
           { command = "clash-meta"; always = false; }
+          { command = "pa-applet"; always = false; }
         ];
       assigns = {
         "number 1: terminal" = [{ class = "non-existent"; }];

@@ -13,7 +13,7 @@
 - Shell: Fish
 - Terminal Emulator: Wezterm
 - Fonts:
-  - zh: Source Han Sans (zh-CN)
+  - zh: 思源黑体
   - en: Hack
 - Desktop Manager: Xfce
 - Window Manager: i3wm
@@ -24,6 +24,8 @@
 - Compositor: Picom
 
 Polybar 和 Rofi 的主题，修改自 [adi1090x/polybar-themes](https://github.com/adi1090x/polybar-themes)。
+
+整体配置参考了 [Misterio77/nix-starter-configs](https://github.com/Misterio77/nix-starter-configs)，和 [NixOS CN](https://github.com/nixos-cn/NixOS-CN-telegram)，在此表示感谢。
 
 ## TODO
 

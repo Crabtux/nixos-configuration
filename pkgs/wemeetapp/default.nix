@@ -15,7 +15,7 @@ let
     xorg.libSM xorg.libICE xorg.libxcb xorg.libXtst
   ] + ":${stdenv.cc.cc.lib}/lib64";
 
-in stdenv.mkDerivation rec {
+in stdenv.mkDerivation {
   name = "TencentMeeting";
   pname = "TencentMeeting";
 

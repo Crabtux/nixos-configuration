@@ -1,6 +1,11 @@
 { pkgs, ... }:
 
 {
+  # Nix LSP
+  environment.systemPackages = with pkgs; [
+    nil
+  ];
+
   programs.neovim = {
     enable = true;
     defaultEditor = true;
@@ -45,6 +50,21 @@
 
         lua << EOF
           vim.api.nvim_create_user_command('Shell', 'bel sp | resize 15 | te', {})
+
+          local cmp = require('cmp')
+          cmp.setup {
+            mapping = {
+              ['<C-p>'] = cmp.mapping.select_prev_item(),
+              ['<C-n>'] = cmp.mapping.select_next_item(),
+              ['<C-space>'] = cmp.mapping.complete(),
+              ['<C-e>'] = cmp.mapping.close(),
+              ['<tab>'] = cmp.mapping.confirm { select = true },
+            },
+            sources = cmp.config.sources({
+              { name = 'nvim_lsp' },
+            }),
+          }
+          require'lspconfig'.nil_ls.setup{}
         EOF
       '';
 

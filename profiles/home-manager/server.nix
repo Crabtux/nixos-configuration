@@ -28,6 +28,7 @@
   };
 
   home.packages = with pkgs; [
+    nil
     tmux
     neofetch
     clash-meta

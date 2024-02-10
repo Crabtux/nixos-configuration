@@ -9,7 +9,17 @@
       ${pkgs.psmisc}/bin/killall -q .polybar-wrapper
       
       # Wait until the processes have been shut down
-      # while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
+      while ${pkgs.procps}/bin/pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
+
+      # Wait until i3 socket is ready
+      while true; do
+        ${pkgs.i3}/bin/i3 --get-socketpath > /dev/null
+        if [ $? -eq 0 ]; then
+          break
+        else
+          ${pkgs.coreutils}/bin/sleep 1
+        fi
+      done
       
       # Launch the bar
       if type "polybar"; then

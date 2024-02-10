@@ -36,6 +36,7 @@
     thunderbird
     nitrogen
     remmina
+    weechat
     anki
     wireshark
   ];

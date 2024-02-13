@@ -54,7 +54,7 @@
     i3lock-fancy
   ] ++ [
     outputs.packages.wemeetapp
-    pkgs.unstable.cutter
+    (pkgs.unstable.cutter.withPlugins (ps: with ps; [ rz-ghidra sigdb ]))
   ];
 
   programs.adb.enable = true;

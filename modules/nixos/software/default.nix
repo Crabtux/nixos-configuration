@@ -34,6 +34,7 @@
     tldr
     rsync
     julia-bin
+    uefitool
     gimp
 
     # Network Utilities

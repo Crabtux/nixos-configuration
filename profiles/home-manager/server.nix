@@ -18,6 +18,7 @@
     ../../modules/home-manager/software/git.nix
     ../../modules/home-manager/software/tmux.nix
     ../../modules/home-manager/software/neovim
+    ../../modules/home-manager/software/gnupg.nix
   ];
 
   targets.genericLinux.enable = true;

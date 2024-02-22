@@ -20,6 +20,7 @@
     ../../modules/home-manager/software/tmux.nix
     ../../modules/home-manager/software/vscode.nix
     ../../modules/home-manager/software/wezterm.nix
+    ../../modules/home-manager/software/gnupg.nix
 
     ../../modules/home-manager/xsession
   ];

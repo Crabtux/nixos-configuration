@@ -11,8 +11,40 @@
 
   # Use the systemd-boot EFI boot loader.
   # TODO: Maybe use grub2?
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader = {
+    efi = {
+      canTouchEfiVariables = true;
+    };
+
+    grub = {
+      enable = true;
+      efiSupport = true;
+      device = "nodev";
+      theme = pkgs.stdenv.mkDerivation {
+        pname = "touhou-grub2-theme";
+        version = "v0.1";
+        src = pkgs.fetchFromGitHub {
+          owner = "13atm01";
+          repo = "GRUB-Theme";
+          rev = "master";
+          hash = "sha256-uIKUd8YAnwemJxhNpgR1xsvcYAuraRK1hN5zra5w1mc=";
+        };
+        installPhase = ''
+          cp -r 'Touhou Project/Touhou-project' $out
+        '';
+      };
+      extraEntries = ''
+        menuentry "Reboot" {
+          reboot
+        }
+        menuentry "Poweroff" {
+          halt
+        }
+      '';
+    };
+  };
+  # boot.loader.systemd-boot.enable = true;
+  # boot.loader.efi.canTouchEfiVariables = true;
 
   # Configure the NVIDIA graphic card.
   hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;

@@ -34,12 +34,18 @@
     tdesktop
     neofetch
     clash-meta
+    python2
     thunderbird
     nitrogen
     remmina
-    weechat
     anki
     wireshark
+    (rizin.withPlugins (ps: with ps; [
+      rz-ghidra
+      sigdb
+    ]))
+    ghidra
+    zoom
   ];
 
   # Enable home-manager

@@ -1,4 +1,4 @@
-{ outputs, pkgs, ... }:
+{ config, outputs, pkgs, ... }:
 
 {
   imports = [
@@ -36,6 +36,7 @@
     julia-bin
     uefitool
     gimp
+    docker-compose
 
     # Network Utilities
     dnsutils
@@ -55,7 +56,8 @@
     i3lock-fancy
   ] ++ [
     outputs.packages.wemeetapp
-    (pkgs.unstable.cutter.withPlugins (ps: with ps; [ rz-ghidra sigdb ]))
+    (cutter.withPlugins (ps: with ps; [ rz-ghidra sigdb ]))
+    config.nur.repos.xddxdd.wechat-uos
   ];
 
   programs.adb.enable = true;

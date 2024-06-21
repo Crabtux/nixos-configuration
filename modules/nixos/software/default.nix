@@ -1,4 +1,4 @@
-{ config, outputs, pkgs, ... }:
+{ config, inputs, outputs, pkgs, ... }:
 
 {
   imports = [
@@ -58,6 +58,8 @@
     outputs.packages.wemeetapp
     (cutter.withPlugins (ps: with ps; [ rz-ghidra sigdb ]))
     config.nur.repos.xddxdd.wechat-uos
+    pkgs.unstable.logseq
+    pkgs.unstable.obsidian
   ];
 
   programs.adb.enable = true;

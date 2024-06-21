@@ -46,6 +46,8 @@
     ]))
     ghidra
     zoom
+    peek
+    pkgs.unstable.imhex
   ];
 
   # Enable home-manager

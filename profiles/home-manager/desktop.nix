@@ -47,7 +47,14 @@
     ghidra
     zoom
     peek
-    pkgs.unstable.imhex
+    imhex
+    appimage-run
+    yara
+    zotero
+    pkgs.unstable.osu-lazer
+    cudatoolkit
+    # komorebi
+    slack
   ];
 
   # Enable home-manager

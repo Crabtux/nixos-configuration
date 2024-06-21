@@ -5,6 +5,6 @@
 
   users.users.crabtux = {
     isNormalUser = true;
-    extraGroups = [ "networkmanager" "wheel" "audio" "adbusers" ]; 
+    extraGroups = [ "networkmanager" "wheel" "audio" "adbusers" "docker" ]; 
   };
 }

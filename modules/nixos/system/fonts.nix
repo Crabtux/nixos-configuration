@@ -8,6 +8,9 @@
     packages = with pkgs; [
       source-han-sans-simplified-chinese
       (nerdfonts.override { fonts = [ "Hack" ]; })
+      noto-fonts
+      noto-fonts-cjk
+      noto-fonts-emoji
     ];
 
     # 不要乱填！这玩意他妈根本不检查对不对的！

@@ -35,8 +35,12 @@
   # For printing to PDF
   services.printing.enable = true;
 
-  # For VSCoe
+  # Used by VS Code
   services.gnome.gnome-keyring.enable = true;
+
+  # Enable flatpak for all users
+  xdg.portal.enable = true;
+  services.flatpak.enable = true;
 
   # Set the default i3-sensible-terminal
   environment.sessionVariables.TERMINAL = [ "wezterm" ];

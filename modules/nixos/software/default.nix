@@ -56,10 +56,12 @@
     i3lock-fancy
   ] ++ [
     outputs.packages.wemeetapp
-    (cutter.withPlugins (ps: with ps; [ rz-ghidra sigdb ]))
-    config.nur.repos.xddxdd.wechat-uos
     pkgs.unstable.logseq
     pkgs.unstable.obsidian
+    (cutter.withPlugins (ps: with ps; [
+      rz-ghidra
+      sigdb
+    ]))
   ];
 
   programs.adb.enable = true;

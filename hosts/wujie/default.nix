@@ -9,8 +9,7 @@
   # 机器特定配置
   networking.hostName = "wujie";
 
-  # Use the systemd-boot EFI boot loader.
-  # TODO: Maybe use grub2?
+  # Use grub2 as bootloader
   boot.loader = {
     efi = {
       canTouchEfiVariables = true;
@@ -27,7 +26,7 @@
           owner = "13atm01";
           repo = "GRUB-Theme";
           rev = "master";
-          hash = "sha256-uIKUd8YAnwemJxhNpgR1xsvcYAuraRK1hN5zra5w1mc=";
+          hash = "sha256-ghsqg6sr9xCkdik24hNcITkiHVVmYzSVVHPTOHCM8oM=";
         };
         installPhase = ''
           cp -r 'Touhou Project/Touhou-project' $out
@@ -43,8 +42,6 @@
       '';
     };
   };
-  # boot.loader.systemd-boot.enable = true;
-  # boot.loader.efi.canTouchEfiVariables = true;
 
   # Configure the NVIDIA graphic card.
   hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;

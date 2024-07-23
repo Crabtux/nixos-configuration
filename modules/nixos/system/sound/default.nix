@@ -2,9 +2,8 @@
 
 {
   imports = [
-    ./mpd.nix
-    ./pulseaudio.nix
+    # ./mpd.nix
+    # ./pulseaudio.nix
+    ./pipewire.nix
   ];
-
-  sound.enable = true;
 }

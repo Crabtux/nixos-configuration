@@ -16,18 +16,12 @@
     htop
     iftop
     tailscale
-    xwinwrap
-    pywal
     psmisc
     mpd
-    sops
-    glibcLocales
-    marktext
     libreoffice
     qq
     ranger
     rofi
-    bottles
     obs-studio
     xclip
     zip
@@ -42,12 +36,10 @@
     dnsutils
     nettools
     netcat
-    udp2raw
     nmap
     wget
     iperf3
     wpa_supplicant_gui
-    rpi-imager
 
     # Wallpaper Manager
     nitrogen
@@ -56,8 +48,6 @@
     i3lock-fancy
   ] ++ [
     outputs.packages.wemeetapp
-    pkgs.unstable.logseq
-    pkgs.unstable.obsidian
     (cutter.withPlugins (ps: with ps; [
       rz-ghidra
       sigdb

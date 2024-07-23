@@ -22,13 +22,6 @@
     ];
     config = {
       allowUnfree = true;
-
-      # Used for fxxking wechat-uos
-      permittedInsecurePackages = [
-        "openssl-1.1.1w"
-        "electron-19.1.9"
-        "python-2.7.18.7"
-      ];
     };
   };
 

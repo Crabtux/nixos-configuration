@@ -34,7 +34,6 @@
     tdesktop
     neofetch
     clash-meta
-    python2
     thunderbird
     nitrogen
     remmina
@@ -45,16 +44,19 @@
       sigdb
     ]))
     ghidra
-    zoom
     peek
     imhex
     appimage-run
-    yara
     zotero
-    pkgs.unstable.osu-lazer
     cudatoolkit
-    # komorebi
+    burpsuite
     slack
+    teamspeak_client
+    ncdu
+    unar
+
+    # A GUI tool for Flatpak
+    discover
   ];
 
   # Enable home-manager

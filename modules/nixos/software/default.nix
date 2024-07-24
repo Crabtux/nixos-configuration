@@ -57,4 +57,7 @@
   programs.adb.enable = true;
   programs.fish.enable = true;
   programs.steam.enable = true;
+
+  # Used by VS Code
+  services.gnome.gnome-keyring.enable = true;
 }

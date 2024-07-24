@@ -1,22 +1,24 @@
-{ ... }:
+{ config, lib, ... }:
 
-{
-  services.xserver.displayManager = {
-    lightdm = {
-      enable = true;
-      background = ./lightdm-background.jpg;
-      extraConfig = ''
-        xserver-command=X -dpi 144
-      '';
-      greeters.slick = {
+with lib; {
+  config = mkIf (config.mySystem.xserver.display-manager == "lightdm") {
+    services.xserver.displayManager = {
+      lightdm = {
         enable = true;
+        background = ./lightdm-background.jpg;
         extraConfig = ''
-          enable-hidpi=on
-          show-power=true
-          high-contrast=true
+          xserver-command=X -dpi 144
         '';
+        greeters.slick = {
+          enable = true;
+          extraConfig = ''
+            enable-hidpi=on
+            show-power=true
+            high-contrast=true
+          '';
+        };
       };
+      defaultSession = "xfce+i3";
     };
-    defaultSession = "xfce+i3";
   };
 }

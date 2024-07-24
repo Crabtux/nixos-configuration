@@ -1,22 +1,10 @@
-{ ... }:
+{ config, lib, ... }:
 
-{
-  services.xserver.displayManager = {
-    gdm = {
-      enable = true;
-      # background = ./lightdm-background.jpg;
-      # extraConfig = ''
-      #   xserver-command=X -dpi 144
-      # '';
-      # greeters.slick = {
-      #   enable = true;
-      #   extraConfig = ''
-      #     enable-hidpi=on
-      #     show-power=true
-      #     high-contrast=true
-      #   '';
-      # };
+with lib; {
+  config = mkIf (config.mySystem.xserver.display-manager == "gdm") {
+    services.xserver.displayManager = {
+      gdm.enable = true;
+      defaultSession = "xfce+i3";
     };
-    defaultSession = "xfce+i3";
   };
 }

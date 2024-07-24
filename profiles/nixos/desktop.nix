@@ -26,6 +26,7 @@
   };
 
   mySystem.sound.pipewire.enable = true;
+  mySystem.xserver.display-manager = "gdm";
 
   # For printing to PDF
   services.printing.enable = true;

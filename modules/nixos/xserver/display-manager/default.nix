@@ -1,9 +1,16 @@
-{ ... }:
+{ lib, ... }:
 
-{
-  # 我有一个天才的想法，可惜我太菜了不会写（
+with lib; {
   imports = [
-    # ./lightdm.nix
+    ./lightdm.nix
     ./gdm.nix
   ];
+
+  options = {
+    mySystem.xserver.display-manager = mkOption {
+      type = types.enum ["disable" "gdm" "lightdm"];
+      default = "disable";
+      description = "Choose display manager";
+    };
+  };
 }

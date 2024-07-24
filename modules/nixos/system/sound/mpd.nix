@@ -1,18 +1,11 @@
-{ ... }:
+{ config, lib, ... }:
 
-{
-  services.mpd = {
-    enable = true;
-    musicDirectory = "/Music";
-    user = "mpd";
-
-    # Extra configurations
-    extraConfig = ''
-      audio_output {
-        type "pulse"
-        name "PULSEAUDIO"
-        server "127.0.0.1"
-      }
-    '';
+with lib; {
+  config = mkIf config.mySystem.sound.mpd.enable {
+    services.mpd = {
+      enable = true;
+      musicDirectory = "/Music";
+      user = "mpd";
+    };
   };
 }

@@ -25,6 +25,8 @@
     };
   };
 
+  mySystem.sound.pipewire.enable = true;
+
   # For printing to PDF
   services.printing.enable = true;
 

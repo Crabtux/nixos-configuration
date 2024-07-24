@@ -3,7 +3,10 @@
 {
   programs.vscode = {
     enable = true;
+
+    # non-fhs package may cause some issue for debugging
     package = pkgs.vscode.fhs;
+
     extensions = with pkgs.vscode-extensions; [
       ms-python.python
       ms-vscode.cpptools

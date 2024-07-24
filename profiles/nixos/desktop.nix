@@ -30,9 +30,6 @@
   # For printing to PDF
   services.printing.enable = true;
 
-  # Used by VS Code
-  services.gnome.gnome-keyring.enable = true;
-
   # Enable flatpak for all users
   xdg.portal.enable = true;
   services.flatpak.enable = true;

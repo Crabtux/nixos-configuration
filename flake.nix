@@ -33,6 +33,7 @@
                 home-manager.useGlobalPkgs = true;
                 home-manager.useUserPackages = true;
                 home-manager.users.crabtux = import ./hosts/wujie/home.nix;
+                home-manager.extraSpecialArgs = { inherit inputs outputs; };
               }
             ];
         };

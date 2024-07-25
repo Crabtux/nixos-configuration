@@ -1,6 +1,8 @@
-{ config, lib, vars, ... }:
+{ config, lib, outputs, ... }:
 
-{
+let
+  polybar-config = outputs.packages.polybar-config;
+in {
   xsession.windowManager.i3 = {
     enable = true;
     config = {
@@ -13,7 +15,7 @@
         in lib.mkOptionDefault {
           "Ctrl+${modifier}+l" = "exec i3lock-fancy";
           "${modifier}+Shift+e" = "exec xfce4-session-logout";
-          "${modifier}+d" = "exec --no-startup-id rofi -no-config -no-lazy-grab -show drun -modi drun -theme ${vars.polybar-config}/docky/scripts/rofi/launcher.rasi";
+          "${modifier}+d" = "exec --no-startup-id rofi -no-config -no-lazy-grab -show drun -modi drun -theme ${polybar-config}/docky/scripts/rofi/launcher.rasi";
         };
       startup = 
         [

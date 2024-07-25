@@ -1,9 +1,11 @@
-{ pkgs, vars, ... }:
+{ pkgs, outputs, ... }:
 
-{
+let 
+  polybar-config = outputs.packages.polybar-config;
+in {
   services.polybar = {
     enable = true;
-    config = vars.polybar-config + /docky/config.ini;
+    config = polybar-config + /docky/config.ini;
     script = ''
       # Terminate already running bar instances
       ${pkgs.psmisc}/bin/killall -q .polybar-wrapper

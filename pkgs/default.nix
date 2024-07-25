@@ -2,4 +2,5 @@
 # You can build them using 'nix build .#example'
 pkgs: {
   wemeetapp = pkgs.callPackage ./wemeetapp { };
+  polybar-config = pkgs.callPackage ./polybar-config { };
 }

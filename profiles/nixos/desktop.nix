@@ -19,9 +19,9 @@
     };
   };
 
-  mySystem.sound.pipewire.enable = true;
   mySystem.xserver.display-manager = "gdm";
   mySystem.system = {
+    sound.pipewire.enable = true;
     bluetooth.enable = true;
     fonts.enable = true;
     i18n.enable = true;

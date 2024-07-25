@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }:
 
 with lib; {
-  config = mkIf config.mySystem.sound.pulseaudio.enable {
+  config = mkIf config.mySystem.system.sound.pulseaudio.enable {
     nixpkgs.config.pulseaudio = true;
 
     environment.systemPackages = with pkgs; [

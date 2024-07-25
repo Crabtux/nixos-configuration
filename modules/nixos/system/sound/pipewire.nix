@@ -4,7 +4,7 @@
 with lib; {
   # Remove sound.enable or set it to false if you had it set previously, as sound.enable is only meant for ALSA-based configurations
 
-  config = mkIf config.mySystem.sound.pipewire.enable {
+  config = mkIf config.mySystem.system.sound.pipewire.enable {
     # rtkit is optional but recommended
     security.rtkit.enable = true;
 

@@ -8,30 +8,11 @@
   ];
 
   options = {
-    mySystem.sound = {
-      # enable = lib.mkOption {
-      #   type = lib.types.bool;
-      #   default = false;
-      #   description = "Enable sound configuration";
-      # };
-
-      pipewire.enable = lib.mkOption {
-        type = lib.types.bool;
-        default = false;
-        description = "Use pipewire as sound server";
-      };
-
-      pulseaudio.enable = lib.mkOption {
-        type = lib.types.bool;
-        default = false;
-        description = "Use pulseaudio as sound server";
-      };
-
-      mpd.enable = lib.mkOption {
-        type = lib.types.bool;
-        default = false;
-        description = "Use mpd";
-      };
+    mySystem.system.sound = {
+      # enable = lib.mkEnableOption "sound";
+      pipewire.enable = lib.mkEnableOption "pipewire";
+      pulseaudio.enable = lib.mkEnableOption "pulseaudio";
+      mpd.enable = lib.mkEnableOption "mpd";
     };
   };
 }

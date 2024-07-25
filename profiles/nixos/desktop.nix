@@ -2,16 +2,10 @@
 
 {
   imports = [ 
+    ../../modules/nixos/software
+    ../../modules/nixos/system
     ../../modules/nixos/xserver
 
-    ../../modules/nixos/software
-
-    ../../modules/nixos/system/sound
-    ../../modules/nixos/system/bluetooth.nix
-    ../../modules/nixos/system/fonts.nix
-    ../../modules/nixos/system/i18n.nix
-
-    ../../modules/nixos/network.nix
     ../../modules/nixos/user.nix
   ];
 
@@ -27,6 +21,12 @@
 
   mySystem.sound.pipewire.enable = true;
   mySystem.xserver.display-manager = "gdm";
+  mySystem.system = {
+    bluetooth.enable = true;
+    fonts.enable = true;
+    i18n.enable = true;
+    network.enable = true;
+  };
 
   # For printing to PDF
   services.printing.enable = true;

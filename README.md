@@ -1,4 +1,10 @@
-# NixOS-configuration
+# NixOS Configuration
+
+## Screenshots
+
+![Desktop](_img/desktop.jpg)
+
+## 一些信息
 
 里面貌似有：
 
@@ -6,9 +12,7 @@
   - Home Manager 作为 NixOS 的模块使用
 - 一个给服务器用的 Standalone Home Manager 配置
 
-有点乱，但我暂时改不动了（
-
-## 一些信息
+有点乱，在改了在改了.jpg
 
 - Shell: Fish
 - Terminal Emulator: Wezterm

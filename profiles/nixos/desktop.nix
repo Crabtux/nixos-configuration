@@ -19,7 +19,12 @@
     };
   };
 
-  mySystem.xserver.display-manager = "gdm";
+  mySystem.xserver = {
+    display-manager = "gdm";
+    desktop-manager = "xfce";
+    window-manager = "i3";
+  };
+
   mySystem.system = {
     sound.pipewire.enable = true;
     bluetooth.enable = true;

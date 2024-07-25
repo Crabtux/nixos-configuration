@@ -1,8 +1,15 @@
-{ ... }:
+{ lib, ... }:
 
-{
-  # 我有一个天才的想法，可惜我太菜了不会写（
+with lib; {
   imports = [
     ./xfce.nix
   ];
+
+  options = {
+    mySystem.xserver.desktop-manager = mkOption {
+      type = types.enum ["disable" "xfce"];
+      default = "disable";
+      description = "Choose desktop manager";
+    };
+  };
 }

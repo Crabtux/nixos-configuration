@@ -32,18 +32,18 @@
               {
                 home-manager.useGlobalPkgs = true;
                 home-manager.useUserPackages = true;
-                home-manager.users.crabtux = import ./profiles/home-manager/desktop.nix;
+                home-manager.users.crabtux = import ./hosts/wujie/home.nix;
               }
             ];
         };
       };
 
       homeConfigurations = {
-        crabtux = home-manager.lib.homeManagerConfiguration {
+        nebula-hpc = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.${system};
           extraSpecialArgs = { inherit nixpkgs system; };
           modules = [
-            ./profiles/home-manager/server.nix
+            ./hosts/nebula-hpc/home.nix
           ];
         };
       };

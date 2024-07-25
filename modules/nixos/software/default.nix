@@ -30,6 +30,7 @@
     julia-bin
     uefitool
     gimp
+    patchelf
     docker-compose
 
     # Network Utilities

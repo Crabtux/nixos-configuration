@@ -15,11 +15,7 @@
         config = wezterm.config_builder()
       end
 
-      config.color_scheme = 'Catppuccin Macchiato'
-      config.colors = {
-        background = 'black'
-      }
-
+      config.color_scheme = 'rose-pine'
       config.enable_scroll_bar = true
       config.use_fancy_tab_bar = false
       config.tab_max_width = 32
@@ -28,8 +24,6 @@
         'Source Han Sans SC',
       }
       config.font_size = 11.0
-      config.window_background_opacity = 0.8
-
       return config
     '';
   };

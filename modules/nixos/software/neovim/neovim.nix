@@ -42,14 +42,20 @@
 
         autocmd VimEnter * NERDTree
 
-        let g:airline_theme='catppuccin'
-        let g:airline_powerline_fonts = 1
-        let g:airline#extensions#tabline#enabled = 1
-
-        colorscheme catppuccin-mocha
+        colorscheme rose-pine
 
         lua << EOF
           vim.api.nvim_create_user_command('Shell', 'bel sp | resize 15 | te', {})
+
+          vim.opt.laststatus = 2 -- Or 3 for global statusline
+          vim.opt.statusline = " %f %m %= %l:%c ♥ "
+          
+          require("rose-pine").setup({
+          	highlight_groups = {
+          		StatusLine = { fg = "love", bg = "love", blend = 10 },
+          		StatusLineNC = { fg = "subtle", bg = "surface" },
+          	},
+          })
 
           local cmp = require('cmp')
           cmp.setup {
@@ -70,12 +76,12 @@
 
       packages.plugins = with pkgs.vimPlugins; {
         start = [
-          catppuccin-nvim
+          rose-pine
           nerdtree
           dashboard-nvim
+          nvim-web-devicons
+          barbar-nvim
           vim-nix
-          vim-airline
-          vim-airline-themes
           vim-devicons
 
           nvim-lspconfig

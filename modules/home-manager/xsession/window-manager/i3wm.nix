@@ -19,7 +19,6 @@ in {
         };
       startup = 
         [
-          { command = "nitrogen --restore"; always = false; }
           { command = "picom"; always = false; }
           { command = "firefox"; always = false; }
           { command = "qq"; always = false; }
@@ -36,13 +35,6 @@ in {
         "number 9: thunderbird" = [{ class = "thunderbird"; }];
         "number 10: firefox" = [{ class = "firefox"; }];
       };
-      colors.focused = {
-        background = "#ffb6c1";
-        border = "#ffb6c1";
-        childBorder = "#ffb6c1";
-        indicator = "#2e9ef4";
-        text = "#ffffff";
-      };
       defaultWorkspace = "workspace number 1";
       floating.criteria = [
         {
@@ -54,5 +46,33 @@ in {
         }
       ];
     };
+
+    extraConfig = ''
+      # set primary Rosé Pine colorscheme colors
+      set $base           #191724
+      set $surface        #1f1d2e
+      set $overlay        #26233a
+      set $muted          #6e6a86
+      set $subtle         #908caa
+      set $text           #e0def4
+      set $love           #eb6f92
+      set $gold           #f6c177
+      set $rose           #ebbcba
+      set $pine           #31748f
+      set $foam           #9ccfd8
+      set $iris           #c4a7e7
+      set $highlightlow   #21202e
+      set $highlightmed   #403d52
+      set $highlighthigh  #524f67
+      
+      # Teming border and Windows --------------
+      # target                 title     bg    text   indicator  border
+      client.focused           $rose     $base $text  $rose      $rose
+      client.focused_inactive  $text     $base $text  $subtle    $surface
+      client.unfocused         $text     $base $text  $overlay   $overlay
+      client.urgent            $text     $base $text  $love      $love
+      client.placeholder       $base     $base $text  $overlay   $overlay
+      client.background        $base
+    '';
   };
 }

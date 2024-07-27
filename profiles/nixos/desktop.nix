@@ -20,7 +20,7 @@
   };
 
   mySystem.xserver = {
-    display-manager = "gdm";
+    display-manager = "sddm";
     desktop-manager = "xfce";
     window-manager = "i3";
   };

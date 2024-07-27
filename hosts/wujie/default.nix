@@ -19,17 +19,19 @@
       enable = true;
       efiSupport = true;
       device = "nodev";
+      splashImage = null;
+      backgroundColor = "#1e1e2e";
       theme = pkgs.stdenv.mkDerivation {
-        pname = "touhou-grub2-theme";
+        pname = "catppuccin-grub2";
         version = "v0.1";
         src = pkgs.fetchFromGitHub {
-          owner = "13atm01";
-          repo = "GRUB-Theme";
-          rev = "master";
-          hash = "sha256-ghsqg6sr9xCkdik24hNcITkiHVVmYzSVVHPTOHCM8oM=";
+          owner = "catppuccin";
+          repo = "grub";
+          rev = "main";
+          hash = "sha256-e8XFWebd/GyX44WQI06Cx6sOduCZc5z7/YhweVQGMGY=";
         };
         installPhase = ''
-          cp -r 'Touhou Project/Touhou-project' $out
+          cp -r $src/src/catppuccin-mocha-grub-theme $out
         '';
       };
       extraEntries = ''

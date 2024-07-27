@@ -65,6 +65,19 @@
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
 
+  # GTK Theme
+  gtk = {
+    enable = true;
+    theme = {
+      name = "rose-pine-gtk-theme";
+      package = pkgs.rose-pine-gtk-theme;
+    };
+    iconTheme = {
+      name = "rose-pine-icon-theme";
+      package = pkgs.rose-pine-icon-theme;
+    };
+  };
+
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   home.stateVersion = "22.11";
 }

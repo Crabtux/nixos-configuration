@@ -9,7 +9,7 @@
     vimAlias = true;
 
     plugins = with pkgs.vimPlugins; [
-      catppuccin-nvim
+      rose-pine
       nerdtree
       dashboard-nvim
       vim-nix
@@ -61,7 +61,7 @@
       let g:airline_powerline_fonts = 1
       let g:airline#extensions#tabline#enabled = 1
 
-      colorscheme catppuccin-mocha
+      colorscheme rose-pine
     '';
 
     extraLuaConfig = ''

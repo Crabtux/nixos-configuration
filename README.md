@@ -2,7 +2,7 @@
 
 ## Screenshots
 
-![Desktop](_img/desktop.jpg)
+![Desktop](_img/desktop1.jpg)
 
 ## 一些信息
 

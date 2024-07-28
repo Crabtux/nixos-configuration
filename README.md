@@ -4,6 +4,8 @@
 
 ![Desktop](_img/desktop1.jpg)
 
+![Vim](_img/desktop2.jpg)
+
 ## 一些信息
 
 里面貌似有：

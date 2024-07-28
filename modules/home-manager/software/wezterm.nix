@@ -15,9 +15,7 @@
         config = wezterm.config_builder()
       end
 
-      -- The wezterm's built-in internal rose-pine color_scheme uses wrong
-      -- color, so we will override it here.
-      -- ref: https://github.com/neapsix/wezterm/blob/main/plugin/init.lua
+      -- Rosé Pine palette
       local main_palette = {
         base = '#191724',
         overlay = '#26233a',
@@ -29,9 +27,14 @@
         pine = '#31748f',
         foam = '#9ccfd8',
         iris = '#c4a7e7',
+        highlight_low = '#21202e',
+        highlight_med = '#403d52',
         highlight_high = '#524f67',
       }
 
+      -- The wezterm's built-in internal rose-pine color_scheme uses wrong
+      -- color, so we will override it here.
+      -- ref: https://github.com/neapsix/wezterm/blob/main/plugin/init.lua
       local rose_pine = wezterm.color.get_builtin_schemes()['rose-pine']
       rose_pine.ansi = {
           main_palette.overlay,
@@ -58,9 +61,36 @@
       }
       config.color_scheme = 'Patched rose-pine'
 
-      config.enable_scroll_bar = true
+      -- Tab bar config
       config.use_fancy_tab_bar = false
+      config.colors = {
+        tab_bar = {
+          background = main_palette.base,
+          active_tab = {
+            bg_color = main_palette.highlight_med,
+            fg_color = main_palette.text,
+          },
+          inactive_tab = {
+            bg_color = main_palette.base,
+            fg_color = main_palette.muted,
+          },
+          inactive_tab_hover = {
+            bg_color = main_palette.highlight_low,
+            fg_color = main_palette.muted,
+          },
+          new_tab = {
+            bg_color = main_palette.base,
+            fg_color = main_palette.text,
+          },
+          new_tab_hover = {
+            bg_color = main_palette.highlight_low,
+            fg_color = main_palette.text,
+          },
+        },
+      }
       config.tab_max_width = 32
+
+      config.enable_scroll_bar = true
       config.font = wezterm.font_with_fallback {
         'Hack Nerd Font',
         'Source Han Sans SC',

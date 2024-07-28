@@ -16,12 +16,12 @@ in {
     };
     plugins = [
       {
-        name = "theme-toaster";
+        name = "theme-clearance";
         src = pkgs.fetchFromGitHub {
           owner = "oh-my-fish";
-          repo = "theme-toaster";
+          repo = "theme-clearance";
           rev = "master";
-          sha256 = "sha256-phghheRBsPXmoVZTXr6RoR8zZl3gOFH9jmMioRYdBjE=";
+          sha256 = "sha256-r8/wT8PgJcE05UcxJR8ZRf9xBnDajmwKDOiD12TRWyk=";
         };
       }
     ];

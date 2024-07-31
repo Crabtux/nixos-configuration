@@ -1,10 +1,10 @@
 { config, inputs, outputs, pkgs, ... }:
 
 {
+  # 分类是按照 nixpkgs repository 来的
   imports = [
-    ./neovim/neovim.nix
-    ./tailscale.nix
-    ./nix.nix
+    ./cli
+    ./desktop
   ];
 
   environment.systemPackages = with pkgs; [
@@ -12,24 +12,16 @@
     neovim
     feh
     git
-    polybar
     htop
     iftop
-    tailscale
     psmisc
     mpd
-    libreoffice
-    qq
     ranger
-    rofi
-    obs-studio
     xclip
     zip
     tldr
     rsync
     julia-bin
-    uefitool
-    gimp
     patchelf
     docker-compose
 
@@ -40,25 +32,10 @@
     nmap
     wget
     iperf3
-    wpa_supplicant_gui
-
-    # Wallpaper Manager
-    nitrogen
-
-    # ScreenSaver
-    i3lock-fancy
-  ] ++ [
-    outputs.packages.wemeetapp
-    (cutter.withPlugins (ps: with ps; [
-      rz-ghidra
-      sigdb
-    ]))
   ];
 
   programs.adb.enable = true;
   programs.fish.enable = true;
-  programs.steam.enable = true;
-  programs.nix-ld.enable = true;
 
   # Used by VS Code
   services.gnome.gnome-keyring.enable = true;

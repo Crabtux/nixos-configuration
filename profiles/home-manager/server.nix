@@ -13,12 +13,7 @@
 
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
-    ../../modules/home-manager/software/direnv.nix
-    ../../modules/home-manager/software/fish.nix
-    ../../modules/home-manager/software/git.nix
-    ../../modules/home-manager/software/tmux.nix
-    ../../modules/home-manager/software/neovim
-    ../../modules/home-manager/software/gnupg.nix
+    ../../modules/home-manager/software/cli
   ];
 
   targets.genericLinux.enable = true;

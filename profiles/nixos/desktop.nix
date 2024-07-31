@@ -19,26 +19,33 @@
     };
   };
 
-  mySystem.xserver = {
-    display-manager = "sddm";
-    desktop-manager = "xfce";
-    window-manager = "i3";
-  };
+  mySystem = {
+    xserver = {
+      display-manager = "sddm";
+      desktop-manager = "xfce";
+      window-manager = "i3";
+    };
 
-  mySystem.system = {
-    sound.pipewire.enable = true;
-    bluetooth.enable = true;
-    fonts.enable = true;
-    i18n.enable = true;
-    network.enable = true;
+    system = {
+      sound.pipewire.enable = true;
+      bluetooth.enable = true;
+      fonts.enable = true;
+      i18n.enable = true;
+      network.enable = true;
+    };
+
+    software = {
+      cli.enable = true;
+      desktop = {
+        applications.enable = true;
+        games.enable = true;
+        tools.enable = true;
+      };
+    };
   };
 
   # For printing to PDF
   services.printing.enable = true;
-
-  # Enable flatpak for all users
-  xdg.portal.enable = true;
-  services.flatpak.enable = true;
 
   # Set the default i3-sensible-terminal
   environment.sessionVariables.TERMINAL = [ "wezterm" ];

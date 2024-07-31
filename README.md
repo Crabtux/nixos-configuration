@@ -8,14 +8,17 @@
 
 ## 一些信息
 
-里面貌似有：
+这套配置由我日常使用，里面包含：
 
 - 一个给 PC 用的 NixOS + Home Manager 配置
   - Home Manager 作为 NixOS 的模块使用
 - 一个给服务器用的 Standalone Home Manager 配置
 
-有点乱，在改了在改了.jpg
+配置分为服务器端和桌面端，使用自行编写的 [rain](modules/nixos/rain) 模块定义了一系列预设配置和配置选项，以期在多机场景下实现快速的声明式配置（此模块目前，且长期将处于开发阶段）。
 
+对于桌面端，使用的部分组件信息如下：
+
+- Color Scheme: [Rosé Pine](https://github.com/rose-pine)
 - Shell: Fish
 - Terminal Emulator: Wezterm
 - Fonts:
@@ -23,7 +26,7 @@
   - en: Hack
 - Desktop Manager: Xfce
 - Window Manager: i3wm
-- Display Manager: Lightdm
+- Display Manager: sddm
 - Screensaver: i3lock-fancy with xautolock
 - Application Launcher: Rofi
 - Status Bar: Polybar
@@ -31,7 +34,7 @@
 
 Polybar 和 Rofi 的主题，修改自 [adi1090x/polybar-themes](https://github.com/adi1090x/polybar-themes)。
 
-整体配置参考了 [Misterio77/nix-starter-configs](https://github.com/Misterio77/nix-starter-configs)，和 [NixOS-CN](https://github.com/nixos-cn/NixOS-CN-telegram) 一些群友的配置，在此表示感谢。
+整体配置和设计思路，参考了 [Misterio77/nix-starter-configs](https://github.com/Misterio77/nix-starter-configs)，和 [NixOS-CN](https://github.com/nixos-cn/NixOS-CN-telegram) 一些群友的配置，在此表示感谢。
 
 ## TODO
 

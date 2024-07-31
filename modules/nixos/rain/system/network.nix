@@ -6,6 +6,7 @@ in {
   options = {
     rain.system.network = {
       enable = mkEnableOption "system network";
+      tailscale.enable = mkEnableOption "tailscale";
       proxy = {
         env.enable = mkEnableOption "proxy environment variables";
         nix.enable = mkEnableOption "nix proxy";
@@ -22,6 +23,9 @@ in {
       enable = true;
       dnssec = "false";
     };
+
+    services.tailscale.enable = lib.mkIf cfg.tailscale.enable true;
+    networking.firewall.checkReversePath = lib.mkIf cfg.tailscale.enable "loose";
 
     environment.sessionVariables = mkIf cfg.proxy.env.enable {
       http_proxy = [ "127.0.0.1:7890" ];

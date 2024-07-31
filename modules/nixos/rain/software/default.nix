@@ -7,33 +7,6 @@
     ./desktop
   ];
 
-  environment.systemPackages = with pkgs; [
-    picom
-    neovim
-    feh
-    git
-    htop
-    iftop
-    psmisc
-    mpd
-    ranger
-    xclip
-    zip
-    tldr
-    rsync
-    julia-bin
-    patchelf
-    docker-compose
-
-    # Network Utilities
-    dnsutils
-    nettools
-    netcat
-    nmap
-    wget
-    iperf3
-  ];
-
   programs.adb.enable = true;
   programs.fish.enable = true;
 

@@ -9,9 +9,15 @@
         sigdb
       ]))
 
-      # Wallpaper Manager
+      # Wallpaper
+      feh
       nitrogen
+
       uefitool
+
+      # video
+      mpd
+      xclip
     ];
   };
 }

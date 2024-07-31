@@ -1,3 +1,4 @@
+# ref: https://github.com/lwndhrst/sddm-rose-pine
 { stdenvNoCC
 , fetchFromGitHub
 , libsForQt5

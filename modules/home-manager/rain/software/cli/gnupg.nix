@@ -1,7 +1,7 @@
 { lib, config, ... }:
 
 {
-  config = lib.mkIf config.rain.home-manager.software.cli.enable {
+  config = lib.mkIf config.rain.home.software.cli.enable {
     programs.gpg = {
       enable = true;
     };

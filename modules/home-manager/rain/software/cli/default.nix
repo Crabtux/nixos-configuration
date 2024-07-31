@@ -10,7 +10,7 @@
     ./home-manager.nix
   ];
 
-  config = lib.mkIf config.rain.home-manager.software.cli.enable {
+  config = lib.mkIf config.rain.home.software.cli.enable {
     home.packages = with pkgs; [
       neofetch
       clash-meta

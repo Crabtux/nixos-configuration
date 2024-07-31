@@ -8,7 +8,7 @@ let
     sha256 = "sha256-bSGGksL/jBNqVV0cHZ8eJ03/8j3HfD9HXpDa8G/Cmi8=";
   };
 in {
-  config = lib.mkIf config.rain.home-manager.software.cli.enable {
+  config = lib.mkIf config.rain.home.software.cli.enable {
     programs.fish = {
       enable = true;
       shellAliases = {

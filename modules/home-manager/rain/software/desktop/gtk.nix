@@ -1,7 +1,7 @@
 { lib, config, pkgs, ... }:
 
 {
-  config = lib.mkIf config.rain.home-manager.software.desktop.enable {
+  config = lib.mkIf config.rain.home.software.desktop.enable {
     # GTK Theme
     gtk = {
       enable = true;

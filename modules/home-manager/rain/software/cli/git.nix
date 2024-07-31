@@ -1,7 +1,7 @@
 { config, lib, ... }:
 
 {
-  config = lib.mkIf config.rain.home-manager.software.cli.enable {
+  config = lib.mkIf config.rain.home.software.cli.enable {
     programs.git = {
       enable = true;
       userName = "Crabtux";

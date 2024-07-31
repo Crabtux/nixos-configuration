@@ -7,7 +7,7 @@
   ];
 
   options = {
-    rain.home-manager.software = {
+    rain.home.software = {
       desktop.enable = lib.mkEnableOption "home-manager desktop software";
       cli.enable = lib.mkEnableOption "home-manager CLI software";
     };

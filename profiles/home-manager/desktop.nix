@@ -10,7 +10,7 @@
     homeDirectory = "/home/crabtux";
   };
 
-  rain.home-manager = {
+  rain.home = {
     software = {
       desktop.enable = true;
       cli.enable = true;

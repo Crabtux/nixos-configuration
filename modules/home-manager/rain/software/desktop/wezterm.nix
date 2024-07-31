@@ -1,7 +1,7 @@
 { config, lib, ... }:
 
 {
-  config = lib.mkIf config.rain.home-manager.software.desktop.enable {
+  config = lib.mkIf config.rain.home.software.desktop.enable {
     programs.wezterm = {
       enable = true;
       enableBashIntegration = true;

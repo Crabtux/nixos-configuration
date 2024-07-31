@@ -2,11 +2,12 @@
 
 {
   imports = [ 
-    ../../modules/nixos/software
-    ../../modules/nixos/system
-    ../../modules/nixos/xserver
+    outputs.nixosModules.rain
+    # ../../modules/nixos/software
+    # ../../modules/nixos/system
+    # ../../modules/nixos/xserver
 
-    ../../modules/nixos/user.nix
+    # ../../modules/nixos/user.nix
   ];
 
   nixpkgs = {

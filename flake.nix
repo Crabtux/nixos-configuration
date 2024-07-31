@@ -19,6 +19,8 @@
     in {
       packages = import ./pkgs pkgs;
       overlays = import ./overlays { inherit inputs pkgs; };
+      nixosModules = import ./modules/nixos;
+      homeManagerModules = import ./modules/home-manager;
 
       nixosConfigurations = {
         wujie = nixpkgs.lib.nixosSystem {

@@ -14,7 +14,6 @@ with lib; {
       bluetooth.enable = lib.mkEnableOption "bluetooth";
       i18n.enable = lib.mkEnableOption "i18n";
       fonts.enable = lib.mkEnableOption "fonts";
-      network.enable = lib.mkEnableOption "network";
     };
   };
 }

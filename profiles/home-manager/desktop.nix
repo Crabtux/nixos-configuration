@@ -22,6 +22,13 @@
     homeDirectory = "/home/crabtux";
   };
 
+  mySystem.home-manager = {
+    software = {
+      desktop.enable = true;
+      cli.enable = true;
+    };
+  };
+
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
 

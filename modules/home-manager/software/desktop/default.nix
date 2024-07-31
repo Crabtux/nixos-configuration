@@ -1,4 +1,4 @@
-{ pkgs, inputs, outputs, config, ... }:
+{ lib, pkgs, inputs, outputs, config, ... }:
 
 {
   imports = [
@@ -8,7 +8,7 @@
     ./gtk.nix
   ];
 
-  config = {
+  config = lib.mkIf config.mySystem.home-manager.software.desktop.enable {
     home.packages = with pkgs; [
       tdesktop
       thunderbird

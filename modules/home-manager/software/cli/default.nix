@@ -1,4 +1,4 @@
-{ pkgs, inputs, outputs, config, ... }:
+{ lib, pkgs, inputs, outputs, config, ... }:
 
 {
   imports = [
@@ -10,7 +10,7 @@
     ./home-manager.nix
   ];
 
-  config = {
+  config = lib.mkIf config.mySystem.home-manager.software.cli.enable {
     home.packages = with pkgs; [
       neofetch
       clash-meta

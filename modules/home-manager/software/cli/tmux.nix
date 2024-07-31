@@ -1,10 +1,12 @@
-{ pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
-  programs.tmux = {
-    enable = true;
-    plugins = with pkgs; [
-      tmuxPlugins.catppuccin
-    ];
+  config = lib.mkIf config.mySystem.home-manager.software.cli.enable {
+    programs.tmux = {
+      enable = true;
+      plugins = with pkgs; [
+        tmuxPlugins.catppuccin
+      ];
+    };
   };
 }

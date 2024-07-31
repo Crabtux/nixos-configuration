@@ -1,7 +1,7 @@
-{ config, pkgs, ... }:
+{ lib, config, pkgs, ... }:
 
 {
-  config = {
+  config = lib.mkIf config.mySystem.home-manager.software.desktop.enable {
     # GTK Theme
     gtk = {
       enable = true;

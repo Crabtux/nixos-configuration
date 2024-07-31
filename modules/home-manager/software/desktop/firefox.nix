@@ -1,5 +1,7 @@
-{ ... }:
+{ lib, config, ... }:
 
 {
-  programs.firefox.enable = true;
+  config = lib.mkIf config.mySystem.home-manager.software.desktop.enable {
+    programs.firefox.enable = true;
+  };
 }

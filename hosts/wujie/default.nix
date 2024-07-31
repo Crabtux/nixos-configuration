@@ -6,44 +6,7 @@
     ./hardware-configuration.nix
   ];
 
-  # 机器特定配置
   networking.hostName = "wujie";
-
-  # Use grub2 as bootloader
-  boot.loader = {
-    efi = {
-      canTouchEfiVariables = true;
-    };
-
-    grub = {
-      enable = true;
-      efiSupport = true;
-      device = "nodev";
-      splashImage = null;
-      backgroundColor = "#1e1e2e";
-      theme = pkgs.stdenv.mkDerivation {
-        pname = "catppuccin-grub2";
-        version = "v0.1";
-        src = pkgs.fetchFromGitHub {
-          owner = "catppuccin";
-          repo = "grub";
-          rev = "main";
-          hash = "sha256-e8XFWebd/GyX44WQI06Cx6sOduCZc5z7/YhweVQGMGY=";
-        };
-        installPhase = ''
-          cp -r $src/src/catppuccin-mocha-grub-theme $out
-        '';
-      };
-      extraEntries = ''
-        menuentry "Reboot" {
-          reboot
-        }
-        menuentry "Poweroff" {
-          halt
-        }
-      '';
-    };
-  };
 
   # Configure the NVIDIA graphic card.
   hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;

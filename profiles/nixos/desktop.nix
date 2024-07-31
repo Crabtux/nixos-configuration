@@ -3,11 +3,6 @@
 {
   imports = [ 
     outputs.nixosModules.rain
-    # ../../modules/nixos/software
-    # ../../modules/nixos/system
-    # ../../modules/nixos/xserver
-
-    # ../../modules/nixos/user.nix
   ];
 
   nixpkgs = {
@@ -32,6 +27,7 @@
       bluetooth.enable = true;
       fonts.enable = true;
       i18n.enable = true;
+      boot.loader = "grub2";
       network = {
         enable = true;
         proxy = {
@@ -56,7 +52,6 @@
 
   # Set the default i3-sensible-terminal
   environment.sessionVariables.TERMINAL = [ "wezterm" ];
-  environment.variables.JULIA_PKG_SERVER = "https://mirrors.nju.edu.cn/julia/";
 
   virtualisation.docker.enable = true;
 }

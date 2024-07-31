@@ -2,6 +2,10 @@
 
 {
   config = lib.mkIf (config.rain.xsession.window-manager.i3.applet.screensaver == "i3lock-fancy") {
+    home.packages = [
+      pkgs.i3lock-fancy
+    ];
+
     services.screen-locker = {
       enable = true;
       inactiveInterval = 10000;

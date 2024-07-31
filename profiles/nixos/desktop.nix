@@ -1,18 +1,21 @@
-{ inputs, outputs, pkgs, ... }:
+{ lib, outputs, ... }:
 
 {
   imports = [ 
     outputs.nixosModules.rain
   ];
 
+  nix.settings = {
+    substituters = lib.mkForce [ "https://mirrors.ustc.edu.cn/nix-channels/store" "https://cache.nixos.org" ];
+    experimental-features = [ "nix-command" "flakes" ];
+  };
+
   nixpkgs = {
     overlays = [
       outputs.overlays.unstable-packages
       outputs.overlays.modifications
     ];
-    config = {
-      allowUnfree = true;
-    };
+    config.allowUnfree = true;
   };
 
   rain = {

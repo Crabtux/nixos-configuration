@@ -1,6 +1,12 @@
 { config, pkgs, lib, ... }:
 
 {
+  options = {
+    rain.software.desktop.tools = {
+      enable = lib.mkEnableOption "desktop tools";
+    };
+  };
+
   config = lib.mkIf config.rain.software.desktop.tools.enable {
     environment.systemPackages = with pkgs; [
       # analysis
@@ -19,5 +25,7 @@
       mpd
       xclip
     ];
+
+    programs.adb.enable = true;
   };
 }

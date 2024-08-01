@@ -32,5 +32,7 @@ in {
       wget
       iperf3
     ];
+
+    programs.fish.enable = true;
   };
 }

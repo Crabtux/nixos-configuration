@@ -1,6 +1,8 @@
-{ lib, pkgs, inputs, outputs, config, ... }:
+{ lib, pkgs, config, ... }:
 
-{
+let
+  cfg = config.rain.home.software.desktop;
+in {
   imports = [
     ./firefox.nix
     ./vscode.nix
@@ -8,7 +10,13 @@
     ./gtk.nix
   ];
 
-  config = lib.mkIf config.rain.home.software.desktop.enable {
+  options = {
+    rain.home.software.desktop = {
+      enable = lib.mkEnableOption "home-manager desktop software";
+    };
+  };
+
+  config = lib.mkIf cfg.enable {
     home.packages = with pkgs; [
       tdesktop
       thunderbird

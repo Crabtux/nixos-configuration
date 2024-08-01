@@ -1,7 +1,11 @@
-{ lib, pkgs, inputs, outputs, config, ... }:
+{ lib, pkgs, config, ... }:
 
-{
+let
+  cfg = config.rain.home.software.cli;
+in {
   imports = [
+    # ./neovim
+
     ./direnv.nix
     ./fish.nix
     ./git.nix
@@ -10,7 +14,13 @@
     ./home-manager.nix
   ];
 
-  config = lib.mkIf config.rain.home.software.cli.enable {
+  options = {
+    rain.home.software.cli = {
+      enable = lib.mkEnableOption "home-manager CLI software";
+    };
+  };
+
+  config = lib.mkIf cfg.enable {
     home.packages = with pkgs; [
       neofetch
       clash-meta

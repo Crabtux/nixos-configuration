@@ -6,10 +6,4 @@
     ./cli
     ./desktop
   ];
-
-  programs.adb.enable = true;
-  programs.fish.enable = true;
-
-  # Used by VS Code
-  services.gnome.gnome-keyring.enable = true;
 }

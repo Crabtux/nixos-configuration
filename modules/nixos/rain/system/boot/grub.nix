@@ -1,6 +1,14 @@
 { pkgs, config, lib, ... }:
 
 {
+  options = {
+    rain.system.boot.loader = lib.mkOption {
+      type = lib.types.enum ["grub2"];
+      default = "grub2";
+      description = "Choose bootloader to use";
+    };
+  };
+
   config = lib.mkIf (config.rain.system.boot.loader == "grub2") {
     boot.loader.grub = {
       enable = true;

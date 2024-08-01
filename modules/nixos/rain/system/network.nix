@@ -1,8 +1,8 @@
 { lib, config, ... }:
 
-with lib; let
+let
   cfg = config.rain.system.network;
-in {
+in with lib; {
   options = {
     rain.system.network = {
       enable = mkEnableOption "system network";
@@ -16,7 +16,7 @@ in {
 
   config = mkIf cfg.enable {
     networking.enableIPv6 = true;
-    networking.useDHCP = lib.mkDefault true;
+    networking.useDHCP = mkDefault true;
     networking.networkmanager.enable = true;
 
     services.resolved = {
@@ -24,8 +24,8 @@ in {
       dnssec = "false";
     };
 
-    services.tailscale.enable = lib.mkIf cfg.tailscale.enable true;
-    networking.firewall.checkReversePath = lib.mkIf cfg.tailscale.enable "loose";
+    services.tailscale.enable = mkIf cfg.tailscale.enable true;
+    networking.firewall.checkReversePath = mkIf cfg.tailscale.enable "loose";
 
     environment.sessionVariables = mkIf cfg.proxy.env.enable {
       http_proxy = [ "127.0.0.1:7890" ];

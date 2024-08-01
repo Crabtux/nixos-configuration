@@ -1,7 +1,15 @@
 { config, pkgs, lib, ... }:
 
-with lib; {
-  config = mkIf config.rain.system.sound.pulseaudio.enable {
+let
+  cfg = config.rain.system.sound.pulseaudio;
+in with lib; {
+  options = {
+    rain.system.sound.pulseaudio = {
+      enable = mkEnableOption "pulseaudio";
+    };
+  };
+
+  config = mkIf cfg.enable {
     nixpkgs.config.pulseaudio = true;
 
     environment.systemPackages = with pkgs; [

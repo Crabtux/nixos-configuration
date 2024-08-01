@@ -1,6 +1,14 @@
 { lib, pkgs, config, ... }:
 
-with lib; {
+let
+  cfg = config.rain.system.fonts;
+in with lib; {
+  options = {
+    rain.system.fonts = {
+      enable = mkEnableOption "system fonts";
+    };
+  };
+
   # Configure the fonts
   config = mkIf config.rain.system.fonts.enable {
     fonts = {

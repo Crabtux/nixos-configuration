@@ -1,15 +1,17 @@
 { pkgs, config, lib, ... }:
 
-{
+let
+  cfg = config.rain.system.boot.loader;
+in with lib; {
   options = {
-    rain.system.boot.loader = lib.mkOption {
-      type = lib.types.enum ["grub2"];
+    rain.system.boot.loader = mkOption {
+      type = types.enum ["grub2"];
       default = "grub2";
       description = "Choose bootloader to use";
     };
   };
 
-  config = lib.mkIf (config.rain.system.boot.loader == "grub2") {
+  config = mkIf (cfg == "grub2") {
     boot.loader.grub = {
       enable = true;
       efiSupport = true;

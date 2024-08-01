@@ -1,7 +1,15 @@
 { lib, config, ... }:
 
-with lib; {
-  config = mkIf config.rain.system.bluetooth.enable {
+let
+  cfg = config.rain.system.bluetooth;
+in with lib; {
+  options = {
+    rain.system.bluetooth = {
+      enable = mkEnableOption "system bluetooth";
+    };
+  };
+
+  config = mkIf cfg.enable {
     # Set Bluetooth
     hardware.bluetooth.enable = true;
     services.blueman.enable = true;

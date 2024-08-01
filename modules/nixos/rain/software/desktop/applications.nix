@@ -1,13 +1,15 @@
 { config, lib, outputs, pkgs, ... }:
 
-{
+let
+  cfg = config.rain.software.desktop.applications;
+in with lib; {
   options = {
     rain.software.desktop.applications = {
-      enable = lib.mkEnableOption "desktop application";
+      enable = mkEnableOption "desktop application";
     };
   };
 
-  config = lib.mkIf config.rain.software.desktop.applications.enable {
+  config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
       # office
       qq

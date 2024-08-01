@@ -2,7 +2,7 @@
 
 let
   cfg = config.rain.software.cli;
-in {
+in with lib; {
   imports = [
     ./neovim
   ];
@@ -11,7 +11,7 @@ in {
     rain.software.cli.enable = lib.mkEnableOption "CLI tools";
   };
 
-  config = lib.mkIf cfg.enable {
+  config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
       git
       htop

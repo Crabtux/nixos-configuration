@@ -1,13 +1,15 @@
 { config, lib, ... }:
 
-{
+let
+  cfg = config.rain.software.desktop.games;
+in with lib; {
   options = {
     rain.software.desktop.games = {
-      enable = lib.mkEnableOption "desktop application";
+      enable = mkEnableOption "desktop application";
     };
   };
 
-  config = lib.mkIf config.rain.software.desktop.games.enable {
+  config = mkIf cfg.enable {
     programs.steam.enable = true;
   };
 }

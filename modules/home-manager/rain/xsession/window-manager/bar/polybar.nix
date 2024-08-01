@@ -2,8 +2,9 @@
 
 let 
   polybar-config = outputs.packages.polybar-config;
-in {
-  config = lib.mkIf (config.rain.home.xsession.window-manager.i3.applet.bar == "polybar") {
+  cfg = config.rain.home.xsession.window-manager.i3.applet.bar;
+in with lib; {
+  config = mkIf (cfg == "polybar") {
     services.polybar = {
       enable = true;
       config = polybar-config + /docky/config.ini;

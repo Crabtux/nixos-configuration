@@ -1,7 +1,15 @@
 { lib, config, pkgs, ... }:
 
-with lib; {
-  config = mkIf config.rain.system.i18n.enable {
+let
+  cfg = config.rain.system.i18n;
+in with lib; {
+  options = {
+    rain.system.i18n = {
+      enable = mkEnableOption "system bluetooth";
+    };
+  };
+
+  config = mkIf cfg.enable {
     # Set your time zone.
     time.timeZone = "Asia/Shanghai";
   

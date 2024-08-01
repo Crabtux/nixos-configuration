@@ -2,7 +2,7 @@
 
 let
   cfg = config.rain.home.software.cli;
-in {
+in with lib; {
   imports = [
     # ./neovim
 
@@ -16,11 +16,11 @@ in {
 
   options = {
     rain.home.software.cli = {
-      enable = lib.mkEnableOption "home-manager CLI software";
+      enable = mkEnableOption "home-manager CLI software";
     };
   };
 
-  config = lib.mkIf cfg.enable {
+  config = mkIf cfg.enable {
     home.packages = with pkgs; [
       neofetch
       clash-meta

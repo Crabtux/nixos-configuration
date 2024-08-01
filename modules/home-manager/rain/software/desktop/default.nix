@@ -2,7 +2,7 @@
 
 let
   cfg = config.rain.home.software.desktop;
-in {
+in with lib; {
   imports = [
     ./firefox.nix
     ./vscode.nix
@@ -12,11 +12,11 @@ in {
 
   options = {
     rain.home.software.desktop = {
-      enable = lib.mkEnableOption "home-manager desktop software";
+      enable = mkEnableOption "home-manager desktop software";
     };
   };
 
-  config = lib.mkIf cfg.enable {
+  config = mkIf cfg.enable {
     home.packages = with pkgs; [
       tdesktop
       thunderbird

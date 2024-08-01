@@ -1,13 +1,15 @@
 { config, pkgs, lib, ... }:
 
-{
+let
+  cfg = config.rain.software.desktop.tools;
+in with lib; {
   options = {
     rain.software.desktop.tools = {
-      enable = lib.mkEnableOption "desktop tools";
+      enable = mkEnableOption "desktop tools";
     };
   };
 
-  config = lib.mkIf config.rain.software.desktop.tools.enable {
+  config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
       # analysis
       (cutter.withPlugins (ps: with ps; [

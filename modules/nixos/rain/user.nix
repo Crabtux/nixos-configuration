@@ -2,14 +2,14 @@
 
 let
   cfg = config.rain.user;
-in {
+in with lib; {
   options = {
     rain.user = {
-      crabtux.enable = lib.mkEnableOption "user crabtux";
+      crabtux.enable = mkEnableOption "user crabtux";
     };
   };
 
-  config = lib.mkIf cfg.crabtux.enable {
+  config = mkIf cfg.crabtux.enable {
     users.defaultUserShell = pkgs.fish;
 
     users.users.crabtux = {

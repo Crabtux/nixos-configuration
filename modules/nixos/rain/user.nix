@@ -1,10 +1,20 @@
-{ pkgs, ... }:
+{ lib, config, pkgs, ... }:
 
-{
-  users.defaultUserShell = pkgs.fish;
+let
+  cfg = config.rain.user;
+in {
+  options = {
+    rain.user = {
+      crabtux.enable = lib.mkEnableOption "user crabtux";
+    };
+  };
 
-  users.users.crabtux = {
-    isNormalUser = true;
-    extraGroups = [ "networkmanager" "wheel" "audio" "adbusers" "docker" ]; 
+  config = lib.mkIf cfg.crabtux.enable {
+    users.defaultUserShell = pkgs.fish;
+
+    users.users.crabtux = {
+      isNormalUser = true;
+      extraGroups = [ "networkmanager" "wheel" "audio" "adbusers" "docker" ]; 
+    };
   };
 }

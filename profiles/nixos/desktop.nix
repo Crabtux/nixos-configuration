@@ -48,6 +48,8 @@
         tools.enable = true;
       };
     };
+
+    user.crabtux.enable = true;
   };
 
   # For printing to PDF

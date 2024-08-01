@@ -5,7 +5,7 @@
     ../../profiles/home-manager/desktop.nix
   ];
 
-  rain.xsession.window-manager.i3 = {
+  rain.home.xsession.window-manager.i3 = {
     enable = true;
     applet = {
       app-menu = "rofi";

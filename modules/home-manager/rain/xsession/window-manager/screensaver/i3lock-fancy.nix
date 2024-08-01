@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }:
 
 {
-  config = lib.mkIf (config.rain.xsession.window-manager.i3.applet.screensaver == "i3lock-fancy") {
+  config = lib.mkIf (config.rain.home.xsession.window-manager.i3.applet.screensaver == "i3lock-fancy") {
     home.packages = [
       pkgs.i3lock-fancy
     ];

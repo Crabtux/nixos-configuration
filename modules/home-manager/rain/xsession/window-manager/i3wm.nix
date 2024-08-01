@@ -59,7 +59,7 @@ in with lib; {
           };
         startup = 
           [
-            mkIf (cfg.applet.compositor == "picom") { command = "picom"; always = false; }
+            { command = "picom"; always = false; }
             { command = "firefox"; always = false; }
             { command = "qq"; always = false; }
             { command = "telegram-desktop"; always = false; }

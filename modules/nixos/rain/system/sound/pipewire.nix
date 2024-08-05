@@ -16,11 +16,8 @@ in with lib; {
     # rtkit is optional but recommended
     security.rtkit.enable = true;
 
-    # GUI Utils
-    environment.systemPackages = with pkgs; [
-      pavucontrol
-      pa_applet
-    ];
+    # Ref: https://nixos.wiki/wiki/Xfce#Pulseaudio
+    nixpkgs.config.pulseaudio = true;
 
     services.pipewire = {
       enable = true;

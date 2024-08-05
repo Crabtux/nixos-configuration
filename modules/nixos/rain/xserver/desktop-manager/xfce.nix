@@ -1,4 +1,4 @@
-{ lib, config, ... }:
+{ pkgs, lib, config, ... }:
 
 with lib; {
   config = mkIf (config.rain.xserver.desktop-manager == "xfce") {
@@ -12,5 +12,11 @@ with lib; {
         enableScreensaver = false;
       };
     };
+    
+    # https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/services/x11/desktop-managers/xfce.nix#L125
+    # Newer versions of nixpkgs add support for this, but now I still have to manually define it here
+    environment.systemPackages = mkIf (config.rain.system.sound != "disable") [
+      pkgs.xfce.xfce4-volumed-pulse
+    ];
   };
 }

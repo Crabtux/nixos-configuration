@@ -12,10 +12,6 @@ in with lib; {
   config = mkIf cfg.enable {
     nixpkgs.config.pulseaudio = true;
 
-    environment.systemPackages = with pkgs; [
-      pa_applet
-    ];
-
     hardware.pulseaudio = {
       enable = true;
       support32Bit = true;

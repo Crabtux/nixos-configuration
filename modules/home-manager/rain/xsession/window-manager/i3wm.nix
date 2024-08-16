@@ -64,7 +64,7 @@ in with lib; {
             { command = "qq"; always = false; }
             { command = "telegram-desktop"; always = false; }
             { command = "thunderbird"; always = false; }
-            { command = "clash-meta"; always = false; }
+            { command = "clash-meta -d /home/crabtux/.config/clash/"; always = false; }
           ];
         assigns = {
           "number 1: terminal" = [{ class = "non-existent"; }];

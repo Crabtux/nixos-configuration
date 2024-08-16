@@ -17,14 +17,6 @@
 
   boot.supportedFilesystems = [ "ntfs" ];
 
-  boot.kernelPackages = pkgs.linuxPackages_6_1;
-
-  # Use the kernel patch to make i915 work correctly.
-  boot.kernelPatches = [{
-    name = "patch-i915";
-    patch = ./kernel_patch/i915.patch;
-  }];
-
   # Force to use the ifname '0' to solve a problem.
   boot.kernelParams = [
     "net.ifnames=0"

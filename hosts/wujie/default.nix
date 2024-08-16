@@ -17,6 +17,12 @@
 
   boot.supportedFilesystems = [ "ntfs" ];
 
+  # A temporary solution for the sound system issue
+  # See also: https://github.com/NixOS/nixpkgs/issues/330685
+  boot.extraModprobeConfig =''
+    options snd-hda-intel dmic_detect=0
+  '';
+
   # Force to use the ifname '0' to solve a problem.
   boot.kernelParams = [
     "net.ifnames=0"

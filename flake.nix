@@ -1,5 +1,5 @@
 {
-  description = "Just a very basic flake for my daliy use";
+  description = "Just a very basic flake for my daily use";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/release-24.05";

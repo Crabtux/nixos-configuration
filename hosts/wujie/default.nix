@@ -29,6 +29,24 @@
     "biosdevname=0"
   ];
 
+  # wujie's multiple monitor setup
+  # Should be moved to `profiles` directory later
+  services.xserver.xrandrHeads = [
+    {
+      output = "eDP-1";
+      primary = true;
+      monitorConfig = ''
+        Option "PreferredMode" "2560x1600"
+      '';
+    }
+    {
+      output = "HDMI-1";
+      monitorConfig = ''
+        Option "PreferredMode" "3840x2160"
+      '';
+    }
+  ];
+
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave

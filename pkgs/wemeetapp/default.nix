@@ -1,7 +1,11 @@
+# 2023/??/??: Init
+# 2024/10/30: Partially adapted from: https://github.com/NixOS/nixpkgs/pull/336638
+# Currently only runs in X11
 { 
-  lib, stdenv, fetchurl, dpkg
+  lib, stdenv, fetchurl, dpkg, makeWrapper
 , wayland, nss, nspr, zlib, xorg, freetype, libgpgerror, fontconfig, expat
-, pciutils, alsaLib, harfbuzz, glib, pulseaudio, lz4, libtiff, libglvnd
+, pciutils, alsaLib, harfbuzz, glib, pulseaudio, lz4, libtiff, libglvnd,
+  xkeyboard_config
 }:
 
 let
@@ -28,16 +32,32 @@ in stdenv.mkDerivation {
     dpkg
   ];
 
-  dontUnpack = true;
+  nativeBuildInputs = [
+    makeWrapper
+  ];
+
+  unpackPhase = ''
+    runHook preUnpack
+    dpkg -x $src .
+    runHook postUnpack
+  '';
 
   installPhase = ''
+    runHook preInstall
+
+    prefix=$out
+
     mkdir -p $out
-    dpkg -x $src $out
-    cp -av $out/opt/wemeet/* $out
-    rm -rf $out/opt $out/usr
-    
-    # Otherwise it looks "suspicious"
-    chmod -R g-w $out
+    cp -r opt/wemeet/* $out
+    cp -r usr/share $out/share
+
+    substituteInPlace $out/share/applications/wemeetapp.desktop \
+      --replace-fail /opt/wemeet $prefix
+
+    substituteInPlace $out/share/applications/wemeetapp.desktop \
+      --replace-fail wemeetapp.sh bin/wemeetapp
+
+    runHook postInstall
   '';
 
   postFixup = ''
@@ -61,5 +81,9 @@ in stdenv.mkDerivation {
 
     patchelf --set-rpath $out/lib/:${rpath} $out/bin/wemeetapp
     patchelf --set-rpath $out/lib/:${rpath} $out/bin/QtWebEngineProcess
+
+    # Currently I have to time figure out what `xkeyboard_config` is lol
+    wrapProgram $prefix/bin/wemeetapp \
+      --set XKB_CONFIG_ROOT "${xkeyboard_config}/share/X11/xkb"
   '';
 }

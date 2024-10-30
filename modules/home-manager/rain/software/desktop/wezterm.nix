@@ -16,7 +16,9 @@
           config = wezterm.config_builder()
         end
 
-        -- Rosé Pine palette
+        -- The wezterm's built-in internal rose-pine color_scheme uses wrong
+        -- color, so we will override it here.
+        -- ref: https://github.com/neapsix/wezterm/blob/main/plugin/init.lua
         local main_palette = {
           base = '#191724',
           overlay = '#26233a',
@@ -33,9 +35,6 @@
           highlight_high = '#524f67',
         }
 
-        -- The wezterm's built-in internal rose-pine color_scheme uses wrong
-        -- color, so we will override it here.
-        -- ref: https://github.com/neapsix/wezterm/blob/main/plugin/init.lua
         local rose_pine = wezterm.color.get_builtin_schemes()['rose-pine']
         rose_pine.ansi = {
             main_palette.overlay,
@@ -57,6 +56,9 @@
             main_palette.rose,
             main_palette.text,
         }
+        rose_pine.selection_bg = main_palette.highlight_med
+        rose_pine.selection_fg = 'none'
+
         config.color_schemes = {
           ['Patched rose-pine'] = rose_pine
         }

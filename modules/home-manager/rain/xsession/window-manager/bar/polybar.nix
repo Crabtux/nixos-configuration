@@ -26,10 +26,12 @@ in with lib; {
         done
         
         # Launch the bar
+        # `tac` is used to reverse the order of monitors
         if type "polybar"; then
-          for m in $(polybar -m | ${pkgs.coreutils}/bin/cut -d ':' -f 1); do
+          for m in $(polybar -m | ${pkgs.coreutils}/bin/cut -d ':' -f 1 | ${pkgs.coreutils}/bin/tac); do
             MONITOR=$m polybar -q top &
             MONITOR=$m polybar -q bottom &
+            ${pkgs.coreutils}/bin/sleep 1
           done
         else
           polybar --reload top &

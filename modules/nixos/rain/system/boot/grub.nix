@@ -15,6 +15,7 @@ in with lib; {
     boot.loader.grub = {
       enable = true;
       efiSupport = true;
+      efiInstallAsRemovable = true;
       device = "nodev";
       splashImage = null;
       backgroundColor = "#1e1e2e";

@@ -12,7 +12,7 @@ in with lib; {
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
       # office
-      qq
+      unstable.qq
       libreoffice
       outputs.packages.wemeetapp
 

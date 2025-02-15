@@ -23,7 +23,6 @@ in with lib; {
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
       neofetch
-      clash-meta
       nitrogen
       (rizin.withPlugins (ps: with ps; [
         rz-ghidra
@@ -31,6 +30,7 @@ in with lib; {
       ]))
       appimage-run
       cudatoolkit
+      devbox
       ncdu
       unar
     ];

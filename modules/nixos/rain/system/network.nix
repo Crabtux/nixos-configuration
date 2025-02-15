@@ -8,8 +8,9 @@ in with lib; {
       enable = mkEnableOption "system network";
       tailscale.enable = mkEnableOption "tailscale";
       proxy = {
+        enable = mkEnableOption "proxy";
         env.enable = mkEnableOption "proxy environment variables";
-        nix.enable = mkEnableOption "nix proxy";
+        nix.enable = mkEnableOption "nix daemon proxy";
       };
     };
   };
@@ -27,12 +28,17 @@ in with lib; {
     services.tailscale.enable = mkIf cfg.tailscale.enable true;
     networking.firewall.checkReversePath = mkIf cfg.tailscale.enable "loose";
 
-    environment.sessionVariables = mkIf cfg.proxy.env.enable {
+    services.mihomo = mkIf cfg.proxy.enable {
+      enable = true;
+      configFile = "/home/crabtux/.config/clash/config.yaml";
+    };
+
+    environment.sessionVariables = mkIf (cfg.proxy.enable && cfg.proxy.env.enable) {
       http_proxy = [ "127.0.0.1:7890" ];
       https_proxy = [ "127.0.0.1:7890" ];
     };
 
-    systemd.services.nix-daemon.environment = mkIf cfg.proxy.nix.enable {
+    systemd.services.nix-daemon.environment = mkIf (cfg.proxy.enable && cfg.proxy.env.enable) {
       http_proxy = "127.0.0.1:7890";
       https_proxy = "127.0.0.1:7890";
     };

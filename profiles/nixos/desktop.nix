@@ -34,6 +34,7 @@
       network = {
         enable = true;
         proxy = {
+          enable = true;
           env.enable = true;
           nix.enable = true;
         };
@@ -44,7 +45,7 @@
       cli.enable = true;
       desktop = {
         applications.enable = true;
-        games.enable = true;
+        games.enable = lib.mkDefault true;
         tools.enable = true;
       };
     };

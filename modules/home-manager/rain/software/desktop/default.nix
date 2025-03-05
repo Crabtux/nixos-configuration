@@ -19,13 +19,11 @@ in with lib; {
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
       tdesktop
-      thunderbird
       remmina
       wireshark
       anki
       ghidra
       peek
-      imhex
       zotero
       burpsuite
       teamspeak_client
@@ -33,6 +31,10 @@ in with lib; {
 
       # A GUI tool for Flatpak
       discover
+
+      # Unstable packages
+      unstable.thunderbird
+      unstable.imhex
     ];
   };
 }

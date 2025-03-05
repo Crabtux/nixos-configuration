@@ -9,5 +9,6 @@ with lib; {
     ./fonts.nix
     ./i18n.nix
     ./network.nix
+    ./virt.nix
   ];
 }

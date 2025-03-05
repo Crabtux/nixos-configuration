@@ -5,7 +5,7 @@
     programs.vscode = {
       enable = true;
 
-      # non-fhs package may cause some issue for debugging
+      # non-fhs package has some issue in debugging
       package = pkgs.vscode.fhs;
 
       extensions = with pkgs.vscode-extensions; [

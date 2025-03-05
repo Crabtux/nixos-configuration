@@ -31,6 +31,8 @@ in with lib; {
       nmap
       wget
       iperf3
+
+      kubectl
     ];
 
     programs.fish.enable = true;

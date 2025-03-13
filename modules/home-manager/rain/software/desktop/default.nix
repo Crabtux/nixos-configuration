@@ -35,6 +35,7 @@ in with lib; {
       # Unstable packages
       unstable.thunderbird
       unstable.imhex
+      unstable.wemeet
     ];
   };
 }

@@ -1,4 +1,4 @@
-{ config, lib, outputs, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 let
   cfg = config.rain.software.desktop.applications;
@@ -14,7 +14,6 @@ in with lib; {
       # office
       unstable.qq
       libreoffice
-      outputs.packages.wemeetapp
 
       # video
       obs-studio

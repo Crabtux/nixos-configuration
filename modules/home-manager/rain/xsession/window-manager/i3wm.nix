@@ -63,7 +63,9 @@ in with lib; {
             { command = "firefox"; always = false; }
             { command = "qq"; always = false; }
             { command = "telegram-desktop"; always = false; }
-            { command = "thunderbird"; always = false; }
+
+            # 疑似有点时序问题，不加延时会出问题
+            { command = "sleep 0.5; nitrogen --restore"; always = true; }
           ];
         assigns = {
           "number 1: terminal" = [{ class = "non-existent"; }];

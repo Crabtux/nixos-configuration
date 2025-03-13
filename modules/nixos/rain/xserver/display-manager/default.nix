@@ -14,8 +14,4 @@ with lib; {
       description = "Choose display manager";
     };
   };
-
-  config = {
-    services.xserver.displayManager.sessionCommands = "nitrogen --restore";
-  };
 }

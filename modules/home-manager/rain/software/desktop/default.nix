@@ -28,6 +28,7 @@ in with lib; {
       burpsuite
       teamspeak_client
       slack
+      obsidian
 
       # A GUI tool for Flatpak
       discover
@@ -37,6 +38,9 @@ in with lib; {
       unstable.imhex
       unstable.code-cursor
       unstable.wemeet
+      unstable.wechat-uos
+
+      nur.repos."12Boti".nsight-graphics
     ];
   };
 }

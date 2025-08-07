@@ -7,6 +7,7 @@
     ./software
     ./system
     ./xserver
+    # ./server
 
     ./user.nix
   ];

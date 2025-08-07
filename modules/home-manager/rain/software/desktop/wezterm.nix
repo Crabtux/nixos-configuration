@@ -1,10 +1,12 @@
-{ config, lib, ... }:
+{ pkgs, config, lib, ... }:
 
 {
   config = lib.mkIf config.rain.home.software.desktop.enable {
     programs.wezterm = {
       enable = true;
       enableBashIntegration = true;
+
+      package = pkgs.unstable.wezterm;
 
       extraConfig = ''
         local wezterm = require 'wezterm'

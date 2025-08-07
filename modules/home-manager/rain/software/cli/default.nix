@@ -33,6 +33,7 @@ in with lib; {
       devbox
       ncdu
       unar
+      w3m         # Maybe I need a CLI browser :)
     ];
   };
 }

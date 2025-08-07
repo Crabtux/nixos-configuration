@@ -15,9 +15,9 @@ in with lib; {
     environment.systemPackages = with pkgs; [
       git
       htop
+      btop
       iftop
       psmisc
-      ranger
       zip
       tldr
       rsync
@@ -33,6 +33,8 @@ in with lib; {
       iperf3
 
       kubectl
+
+      unstable.ranger
     ];
 
     programs.fish.enable = true;

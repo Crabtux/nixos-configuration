@@ -34,13 +34,13 @@ in with lib; {
     };
 
     environment.sessionVariables = mkIf (cfg.proxy.enable && cfg.proxy.env.enable) {
-      http_proxy = [ "127.0.0.1:7890" ];
-      https_proxy = [ "127.0.0.1:7890" ];
+      http_proxy = [ "http://127.0.0.1:7890" ];
+      https_proxy = [ "http://127.0.0.1:7890" ];
     };
 
     systemd.services.nix-daemon.environment = mkIf (cfg.proxy.enable && cfg.proxy.env.enable) {
-      http_proxy = "127.0.0.1:7890";
-      https_proxy = "127.0.0.1:7890";
+      http_proxy = "http://127.0.0.1:7890";
+      https_proxy = "http://127.0.0.1:7890";
     };
   };
 }

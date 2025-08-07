@@ -14,6 +14,7 @@ in with lib; {
       # office
       unstable.qq
       libreoffice
+      beebeep
 
       # video
       obs-studio

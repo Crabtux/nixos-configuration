@@ -29,7 +29,7 @@
           modules = 
             [
               ./hosts/wujie
-              nur.nixosModules.nur
+              nur.modules.nixos.default
               home-manager.nixosModules.home-manager
               {
                 home-manager.useGlobalPkgs = true;

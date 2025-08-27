@@ -1,7 +1,8 @@
-{ lib, pkgs, config, ... }:
+{ lib, pkgs, config, outputs, ... }:
 
 let
   cfg = config.rain.home.software.desktop;
+  animeko = outputs.packages.animeko;
 in with lib; {
   imports = [
     ./firefox.nix
@@ -39,6 +40,9 @@ in with lib; {
       unstable.code-cursor
       unstable.wemeet
       unstable.wechat-uos
+
+      # Packages used by myself
+      animeko
 
       nur.repos."12Boti".nsight-graphics
     ];

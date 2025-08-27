@@ -3,4 +3,5 @@
 pkgs: {
   polybar-config = pkgs.callPackage ./polybar-config { };
   sddm-rose-pine = pkgs.callPackage ./sddm-rose-pine { };
+  animeko = pkgs.callPackage ./animeko { };
 }

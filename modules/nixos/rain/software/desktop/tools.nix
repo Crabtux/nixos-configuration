@@ -11,12 +11,6 @@ in with lib; {
 
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
-      # analysis
-      (cutter.withPlugins (ps: with ps; [
-        rz-ghidra
-        sigdb
-      ]))
-
       # Wallpaper
       feh
       nitrogen

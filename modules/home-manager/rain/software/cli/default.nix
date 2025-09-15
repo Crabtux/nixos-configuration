@@ -24,10 +24,6 @@ in with lib; {
     home.packages = with pkgs; [
       neofetch
       nitrogen
-      (rizin.withPlugins (ps: with ps; [
-        rz-ghidra
-        sigdb
-      ]))
       appimage-run
       cudatoolkit
       devbox

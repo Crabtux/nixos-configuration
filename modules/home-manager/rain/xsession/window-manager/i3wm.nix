@@ -45,14 +45,12 @@ in with lib; {
   config = {
     xsession.windowManager.i3 = mkIf cfg.enable {
       enable = true;
-      config = {
+      config = rec {
         bars = [];
         gaps.inner = 9;
         modifier = "Mod4";
         keybindings = 
-          let
-            modifier = config.xsession.windowManager.i3.config.modifier;
-          in lib.mkOptionDefault {
+          lib.mkOptionDefault {
             "Ctrl+${modifier}+l" = "exec i3lock-fancy";
             "${modifier}+Shift+e" = "exec xfce4-session-logout";
             "${modifier}+d" = "exec --no-startup-id rofi -no-config -no-lazy-grab -show drun -modi drun -theme ${polybar-config}/docky/scripts/rofi/launcher.rasi";

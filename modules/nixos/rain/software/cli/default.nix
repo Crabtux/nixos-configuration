@@ -22,7 +22,6 @@ in with lib; {
       tldr
       rsync
       patchelf
-      docker-compose
 
       # Network Utilities
       dnsutils

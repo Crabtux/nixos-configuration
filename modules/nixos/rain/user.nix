@@ -14,7 +14,7 @@ in with lib; {
 
     users.users.crabtux = {
       isNormalUser = true;
-      extraGroups = [ "networkmanager" "wheel" "audio" "adbusers" "docker" ]; 
+      extraGroups = [ "networkmanager" "wheel" "audio" "adbusers" ]; 
     };
   };
 }

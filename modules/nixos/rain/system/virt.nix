@@ -22,11 +22,12 @@ in with lib; {
 
     virtualisation.docker.enable = mkIf cfg.docker.enable true;
 
-    environment.systemPackages = with pkgs;
-      mkIf cfg.wine.enable [
-        # https://nixos.wiki/wiki/Wine
-        # On x86_64-linux, the wine package supports by default both 32-bit and 64-bit applications.
-        wine
+    environment.systemPackages =
+      lists.optionals cfg.docker.enable [
+        pkgs.docker-compose
+      ] ++
+      lists.optionals cfg.wine.enable [
+        pkgs.wine
       ];
   };
 }

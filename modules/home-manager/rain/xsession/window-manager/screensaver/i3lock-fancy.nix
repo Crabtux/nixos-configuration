@@ -10,9 +10,7 @@ in with lib; {
 
     services.screen-locker = {
       enable = true;
-      inactiveInterval = 10000;
       lockCmd = "${pkgs.i3lock-fancy}/bin/i3lock-fancy";
-      xss-lock.enable = true;
     };
   };
 }

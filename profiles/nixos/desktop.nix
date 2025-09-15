@@ -1,13 +1,16 @@
-{ lib, outputs, ... }:
+{ lib, outputs, pkgs, ... }:
 
 {
   imports = [ 
     outputs.nixosModules.rain
   ];
 
-  nix.settings = {
-    substituters = lib.mkForce [ "https://mirrors.ustc.edu.cn/nix-channels/store" "https://cache.nixos.org" ];
-    experimental-features = [ "nix-command" "flakes" ];
+  nix = {
+    package = pkgs.unstable.nixVersions.latest;
+    settings = {
+      substituters = lib.mkForce [ "https://mirrors.ustc.edu.cn/nix-channels/store" "https://cache.nixos.org" ];
+      experimental-features = [ "nix-command" "flakes" ];
+    };
   };
 
   nixpkgs = {

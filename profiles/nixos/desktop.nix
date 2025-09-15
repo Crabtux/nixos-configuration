@@ -37,6 +37,7 @@
       virt = {
         enable = true;
         virt-manager.enable = true;
+        docker.enable = true;
         wine.enable = true;
       };
       network = {
@@ -61,11 +62,6 @@
     user.crabtux.enable = true;
   };
 
-  # For printing to PDF
+  # Enable printing to PDF
   services.printing.enable = true;
-
-  # Set the default i3-sensible-terminal
-  environment.sessionVariables.TERMINAL = [ "wezterm" ];
-
-  virtualisation.docker.enable = true;
 }

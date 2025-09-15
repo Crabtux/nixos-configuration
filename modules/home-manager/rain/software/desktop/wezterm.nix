@@ -2,6 +2,9 @@
 
 {
   config = lib.mkIf config.rain.home.software.desktop.enable {
+    # TODO: 更智能一点
+    environment.sessionVariables.TERMINAL = [ "wezterm" ];
+
     programs.wezterm = {
       enable = true;
       enableBashIntegration = true;

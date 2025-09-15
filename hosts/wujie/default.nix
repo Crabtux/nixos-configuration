@@ -65,30 +65,6 @@
     }
   ];
 
-  environment.systemPackages = with pkgs; [
-    # ...
-
-    # support both 32-bit and 64-bit applications
-    wineWowPackages.stable
-
-    # support 32-bit only
-    wine
-
-    # support 64-bit only
-    (wine.override { wineBuild = "wine64"; })
-
-    # support 64-bit only
-    wine64
-
-    # wine-staging (version with experimental features)
-    wineWowPackages.staging
-
-    # winetricks (all versions)
-    winetricks
-  ];
-
-
-
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave

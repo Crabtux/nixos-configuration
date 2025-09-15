@@ -31,6 +31,11 @@
       fonts.enable = true;
       i18n.enable = true;
       boot.loader = "grub2";
+      virt = {
+        enable = true;
+        virt-manager.enable = true;
+        wine.enable = true;
+      };
       network = {
         enable = true;
         proxy = {

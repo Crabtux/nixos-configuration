@@ -12,7 +12,7 @@ in with lib; {
       enable = true;
       inactiveInterval = 10000;
       lockCmd = "${pkgs.i3lock-fancy}/bin/i3lock-fancy";
-      xautolock.enable = true;
+      xss-lock.enable = true;
     };
   };
 }

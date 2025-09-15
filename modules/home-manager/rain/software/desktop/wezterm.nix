@@ -1,9 +1,12 @@
 { pkgs, config, lib, ... }:
 
+let
+  i3config = config.rain.home.xsession.window-manager.i3;
+in
 {
   config = lib.mkIf config.rain.home.software.desktop.enable {
-    # TODO: 更智能一点
-    home.sessionVariables.TERMINAL = "wezterm";
+    # FIXME: 不太应该写死成只处理 i3wm 的，但先这样吧。
+    xsession.windowManager.i3.config.terminal = lib.mkIf i3config.enable "wezterm";
 
     programs.wezterm = {
       enable = true;

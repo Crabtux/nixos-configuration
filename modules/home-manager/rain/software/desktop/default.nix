@@ -23,10 +23,8 @@ in with lib; {
       remmina
       wireshark
       anki
-      ghidra
       peek
       zotero
-      burpsuite
       teamspeak_client
       slack
       obsidian
@@ -43,8 +41,6 @@ in with lib; {
 
       # Packages used by myself
       animeko
-
-      nur.repos."12Boti".nsight-graphics
     ];
   };
 }

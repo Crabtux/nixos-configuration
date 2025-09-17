@@ -16,5 +16,7 @@ in with lib; {
       isNormalUser = true;
       extraGroups = [ "networkmanager" "wheel" "audio" "adbusers" ]; 
     };
+
+    nix.settings.trusted-users = [ "crabtux" ];
   };
 }

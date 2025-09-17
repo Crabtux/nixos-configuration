@@ -31,8 +31,6 @@ in with lib; {
       wget
       iperf3
 
-      kubectl
-
       unstable.ranger
     ];
 

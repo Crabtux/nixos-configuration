@@ -5,7 +5,7 @@ let
     owner = "rose-pine";
     repo = "fish";
     rev = "main";
-    sha256 = "sha256-bSGGksL/jBNqVV0cHZ8eJ03/8j3HfD9HXpDa8G/Cmi8=";
+    sha256 = "sha256-hOcsGt0IMoX1a02t85qeoE381XEca0F2x0AtFNwOqj0=";
   };
 in {
   config = lib.mkIf config.rain.home.software.cli.enable {

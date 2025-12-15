@@ -15,11 +15,11 @@ in with lib; {
       enableDefaultPackages = true;
 
       packages = with pkgs; [
-        source-han-sans-simplified-chinese
-        (nerdfonts.override { fonts = [ "Hack" ]; })
-        noto-fonts
-        noto-fonts-cjk
-        noto-fonts-emoji
+        source-han-sans
+        nerd-fonts.hack
+        # noto-fonts
+        # noto-fonts-cjk
+        # noto-fonts-emoji
       ];
 
       # 不要乱填！这玩意他妈根本不检查对不对的！

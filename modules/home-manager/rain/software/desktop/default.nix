@@ -19,18 +19,18 @@ in with lib; {
 
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
-      tdesktop
+      telegram-desktop
       remmina
       wireshark
       anki
       peek
       zotero
-      teamspeak_client
+      # teamspeak3
       slack
       obsidian
 
       # A GUI tool for Flatpak
-      discover
+      # discover
 
       # Unstable packages
       unstable.thunderbird

@@ -2,11 +2,11 @@
   description = "Just a very basic flake for my daily use";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/release-24.05";
+    nixpkgs.url = "github:nixos/nixpkgs/release-25.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nur.url = "github:nix-community/NUR";
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.05";
+      url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -23,18 +23,18 @@
       homeManagerModules = import ./modules/home-manager;
 
       nixosConfigurations = {
-        wujie = nixpkgs.lib.nixosSystem {
+        TX-Air = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           specialArgs = { inherit inputs outputs; };
           modules = 
             [
-              ./hosts/wujie
+              ./hosts/TX-Air
               nur.modules.nixos.default
               home-manager.nixosModules.home-manager
               {
                 home-manager.useGlobalPkgs = true;
                 home-manager.useUserPackages = true;
-                home-manager.users.crabtux = import ./hosts/wujie/home.nix;
+                home-manager.users.crabtux = import ./hosts/TX-Air/home.nix;
                 home-manager.extraSpecialArgs = { inherit inputs outputs; };
               }
             ];

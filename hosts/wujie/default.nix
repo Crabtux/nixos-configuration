@@ -15,6 +15,7 @@
   hardware.nvidia.modesetting.enable = true;
   
   services.xserver.videoDrivers = [ "modesetting" "nvidia" ];
+  services.xserver.dpi = 144;
 
   boot.supportedFilesystems = [ "ntfs" ];
 

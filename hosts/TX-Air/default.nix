@@ -22,10 +22,17 @@
   services.xserver.videoDrivers = [ "amdgpu" ];
 
   # Thank you, Gemini 3 Pro!
-  # Fix an issue of screen freezing on idle with amdgpu
+  # An workaround used to fix an issue of screen freezing on idle with amdgpu
   services.xserver.deviceSection = ''
     Option "TearFree" "true"
   '';
+
+  # Thank you again, Gemini 3 Pro!
+  # 另一个 workaround，用来修开机卡顿 36s 的问题
+  # See also: https://www.bilibili.com/opus/1104887054270988297
+  boot.kernelParams = [
+    "initcall_blacklist=acpi_gpio_handle_deferred_request_irqs"
+  ];
 
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.

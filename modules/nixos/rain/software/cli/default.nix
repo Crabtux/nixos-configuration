@@ -32,6 +32,7 @@ in with lib; {
       iperf3
 
       unstable.ranger
+      gemini-cli
     ];
 
     programs.fish.enable = true;

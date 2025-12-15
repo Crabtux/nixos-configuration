@@ -49,6 +49,7 @@ in with lib; {
         bars = [];
         gaps.inner = 9;
         modifier = "Mod4";
+        window.titlebar = false;
         keybindings = 
           lib.mkOptionDefault {
             "Ctrl+${modifier}+l" = "exec i3lock-fancy";

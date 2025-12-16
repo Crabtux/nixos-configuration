@@ -19,8 +19,13 @@ in with lib; {
     i18n.inputMethod = {
       enabled = "fcitx5";
       fcitx5.addons = with pkgs; [
-        # Chinese and Japanese input
-        fcitx5-rime
+        # See also: https://zhuanlan.zhihu.com/p/1963358188226183647
+        (fcitx5-rime.override {
+          rimeDataPkgs = [
+            pkgs.rime-ice
+          ];
+        })
+        fcitx5-rose-pine
         fcitx5-mozc
       ];
     };

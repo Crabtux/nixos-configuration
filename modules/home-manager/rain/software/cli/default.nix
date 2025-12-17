@@ -7,6 +7,7 @@ in with lib; {
     # ./neovim
 
     ./direnv.nix
+    ./fastfetch.nix
     ./fish.nix
     ./git.nix
     ./gnupg.nix
@@ -22,7 +23,6 @@ in with lib; {
 
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
-      fastfetch
       nitrogen
       appimage-run
       cudatoolkit

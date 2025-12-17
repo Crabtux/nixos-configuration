@@ -22,7 +22,7 @@ in with lib; {
 
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
-      neofetch
+      fastfetch
       nitrogen
       appimage-run
       cudatoolkit

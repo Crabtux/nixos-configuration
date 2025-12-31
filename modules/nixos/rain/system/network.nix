@@ -1,4 +1,4 @@
-{ lib, config, ... }:
+{ lib, pkgs, config, ... }:
 
 let
   cfg = config.rain.system.network;
@@ -18,11 +18,11 @@ in with lib; {
   config = mkIf cfg.enable {
     networking.enableIPv6 = true;
     networking.useDHCP = mkDefault true;
-    networking.networkmanager.enable = true;
-
-    services.resolved = {
+    networking.networkmanager = {
       enable = true;
-      dnssec = "false";
+      plugins = with pkgs; [
+        networkmanager-openvpn
+      ];
     };
 
     services.tailscale.enable = mkIf cfg.tailscale.enable true;

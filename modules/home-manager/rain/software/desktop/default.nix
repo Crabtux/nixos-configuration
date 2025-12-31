@@ -26,6 +26,7 @@ in with lib; {
       peek
       zotero
       # teamspeak3
+      feishu
       slack
       obsidian
 

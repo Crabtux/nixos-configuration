@@ -16,7 +16,7 @@
 
   rain.wayland = {
     enable = true;
-    compositor = "sway";
+    compositor = "hyprland";
     display-manager = "sddm";
   };
 

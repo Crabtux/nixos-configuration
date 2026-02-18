@@ -9,7 +9,7 @@ with lib; {
   options.rain.wayland = {
     enable = mkEnableOption "wayland stack";
     compositor = mkOption {
-      type = types.enum [ "disable" "sway" ];
+      type = types.enum [ "disable" "sway" "hyprland" ];
       default = "disable";
       description = "Choose Wayland compositor";
     };

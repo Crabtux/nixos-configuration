@@ -15,6 +15,8 @@
     };
   };
 
+  rain.home.wayland.sway.enable = true;
+
   # Xfce4 DPI settings (really useful)
   xfconf.settings = {
     xsettings = {

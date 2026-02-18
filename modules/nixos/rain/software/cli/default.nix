@@ -23,6 +23,8 @@ in with lib; {
       rsync
       patchelf
 
+      python3
+
       # Network Utilities
       dnsutils
       nettools
@@ -32,7 +34,8 @@ in with lib; {
       iperf3
 
       unstable.ranger
-      gemini-cli
+      unstable.gemini-cli
+      unstable.codex
     ];
 
     programs.fish.enable = true;

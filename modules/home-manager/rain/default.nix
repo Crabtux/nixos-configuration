@@ -5,5 +5,6 @@
   imports = [
     ./software
     ./xsession
+    ./wayland
   ];
 }

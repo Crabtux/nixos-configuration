@@ -18,6 +18,7 @@ in with lib; {
     i18n.supportedLocales = [ "zh_CN.UTF-8/UTF-8" "en_US.UTF-8/UTF-8" "C.UTF-8/UTF-8" ];
     i18n.inputMethod = {
       enabled = "fcitx5";
+      fcitx5.waylandFrontend = true;
       fcitx5.addons = with pkgs; [
         # See also: https://zhuanlan.zhihu.com/p/1963358188226183647
         (fcitx5-rime.override {
@@ -25,6 +26,7 @@ in with lib; {
             pkgs.rime-ice
           ];
         })
+        fcitx5-gtk
         fcitx5-rose-pine
         fcitx5-mozc
       ];

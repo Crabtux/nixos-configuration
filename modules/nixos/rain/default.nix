@@ -7,6 +7,7 @@
     ./software
     ./system
     ./xserver
+    ./wayland
     # ./server
 
     ./user.nix

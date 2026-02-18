@@ -4,6 +4,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/release-25.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    illogical-impulse.url = "github:Crabtux/end-4-dots-hyprland-nixos";
     nur.url = "github:nix-community/NUR";
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";

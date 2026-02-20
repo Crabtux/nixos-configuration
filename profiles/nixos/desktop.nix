@@ -23,9 +23,9 @@
 
   rain = {
     xserver = {
-      display-manager = "sddm";
-      desktop-manager = "xfce";
-      window-manager = "i3";
+      # display-manager = "sddm";
+      # desktop-manager = "xfce";
+      # window-manager = "i3";
     };
 
     system = {

@@ -11,9 +11,9 @@ with lib; {
     ];
 
     services.xserver.displayManager = {
-      defaultSession = "xfce+i3";
       sddm = {
         enable = true;
+        wayland.enable = true;
         theme = "sddm-astronaut-theme";
         extraPackages = with pkgs.kdePackages; [
           qtmultimedia

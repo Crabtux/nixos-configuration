@@ -21,10 +21,11 @@
   };
 
   # Configure the NVIDIA graphic card.
-  boot.blacklistedKernelModules = [ "nouveau" ];
+  boot.blacklistedKernelModules = [ "nouveau" "nvidia" "nvidia_drm" "nvidia_uvm" ];
 
   hardware.nvidia = {
     open = true;
+    modesetting.enable = true;
     powerManagement.enable = true;
     powerManagement.finegrained = true;
     prime = {
@@ -38,7 +39,7 @@
 
   hardware.opengl.enable = true;
 
-  services.xserver.videoDrivers = [ "amdgpu" ];
+  services.xserver.videoDrivers = [ "amdgpu" "nvidia" ];
 
   # Thank you, Gemini 3 Pro!
   # An workaround used to fix an issue of screen freezing on idle with amdgpu
@@ -53,11 +54,20 @@
     "initcall_blacklist=acpi_gpio_handle_deferred_request_irqs"
   ];
 
-  # 省电策略
   environment.systemPackages = with pkgs; [
     powertop
+
+    # 补 schema，虽然我不知道这是啥
+    glib
+    dconf
+    dconf-editor
+    gsettings-desktop-schemas
+
+    # 给 neovim 用的
+    wl-clipboard
   ];
 
+  # 省电策略
   services.tlp = {
     enable = true;
     settings = {

@@ -28,6 +28,7 @@ in with lib; {
     illogical-impulse.hyprland.monitor = [
       "eDP-1,preferred,auto,1.6"
       "eDP-2,2560x1600@165,auto,1.6"
+      "DP-1,3840x2160@60,auto,1.6"
     ];
   };
 }

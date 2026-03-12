@@ -119,6 +119,12 @@
     };
   };
 
+  virtualisation.docker.daemon.settings.proxies = {
+    http-proxy  = "http://127.0.0.1:7890";
+    https-proxy = "http://127.0.0.1:7890";
+    no-proxy    = "localhost,127.0.0.1";
+  };
+
   # services.power-profiles-daemon.enable = true;
 
   # This option defines the first version of NixOS you have installed on this particular machine,

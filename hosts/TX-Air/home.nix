@@ -71,6 +71,7 @@
 
   home.packages = with pkgs; [
     qt6Packages.qt6ct
+    logisim-evolution
   ];
 
   services.hypridle.enable = lib.mkForce false;
